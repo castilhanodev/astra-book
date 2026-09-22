@@ -1,0 +1,32 @@
+# Publica a Política de Privacidade e a página de excluir conta no GitHub Pages
+name: Publicar páginas
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['projeto.zip', 'hosting/**', 'firebase-config.js']
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Abrir o projeto
+        run: if [ -f projeto.zip ]; then unzip -oq projeto.zip; fi
+      - run: cp firebase-config.js hosting/public/firebase-config.js
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: hosting/public
+      - id: deployment
+        uses: actions/deploy-pages@v4
