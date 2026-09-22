@@ -16,6 +16,7 @@ jobs:
         run: |
           if [ -f projeto.zip ]; then unzip -oq projeto.zip; fi
           if [ -f atualizacao.zip ]; then unzip -oq atualizacao.zip; fi
+          if [ -d patch ]; then cp -r patch/. .; fi
 
       - uses: actions/setup-node@v4
         with:
@@ -26,7 +27,7 @@ jobs:
           distribution: temurin
           java-version: 21
 
-      - name: Instalar dependÃªncias
+      - name: Instalar dependÃÂªncias
         run: npm ci
 
       - name: Login com Google (arquivo do Firebase)
@@ -36,7 +37,7 @@ jobs:
           if [ -n "$GSJ" ]; then
             echo "$GSJ" > android/app/google-services.json
           elif [ ! -f android/app/google-services.json ]; then
-            echo "Sem google-services.json: gerando o app sem o botÃ£o do Google"
+            echo "Sem google-services.json: gerando o app sem o botÃÂ£o do Google"
             npm uninstall @capacitor-firebase/authentication
           fi
 
