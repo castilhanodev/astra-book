@@ -27,7 +27,7 @@ jobs:
           distribution: temurin
           java-version: 21
 
-      - name: Instalar dependÃÂªncias
+      - name: Instalar dependencias
         run: npm ci
 
       - name: Login com Google (arquivo do Firebase)
@@ -37,7 +37,7 @@ jobs:
           if [ -n "$GSJ" ]; then
             echo "$GSJ" > android/app/google-services.json
           elif [ ! -f android/app/google-services.json ]; then
-            echo "Sem google-services.json: gerando o app sem o botÃÂ£o do Google"
+            echo "Sem google-services.json: gerando o app sem o botao do Google"
             npm uninstall @capacitor-firebase/authentication
           fi
 
