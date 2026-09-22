@@ -15,7 +15,7 @@ jobs:
       - name: Abrir o projeto
         run: |
           if [ -f projeto.zip ]; then unzip -oq projeto.zip; fi
-          if [ -f atualizacao.zip ]; then unzip -oq atualizacao.zip; fi
+          for z in $(ls atualizacao*.zip 2>/dev/null | sort); do unzip -oq "$z"; done
           if [ -d patch ]; then cp -r patch/. .; fi
 
       - uses: actions/setup-node@v4
