@@ -17,6 +17,7 @@ jobs:
           if [ -f projeto.zip ]; then unzip -oq projeto.zip; fi
           for z in $(ls atualizacao*.zip 2>/dev/null | sort); do unzip -oq "$z"; done
           if [ -d patch ]; then cp -r patch/. .; fi
+          test -f remendo.js && cp remendo.js www/patch.js || true
 
       - uses: actions/setup-node@v4
         with:
