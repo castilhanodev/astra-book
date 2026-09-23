@@ -8,11 +8,14 @@
    palavra anterior.
 
    Aqui a gente mede a largura de verdade de cada pedaco na propria pagina e
-   forca ele a ter exatamente a largura que o PDF declara. */
+   forca ele a ter exatamente a largura que o PDF declara.
+
+   A funcao da biblioteca nao aceita ser substituida direto, entao trocamos o
+   objeto inteiro por um intermediario que repassa tudo e so troca essa funcao. */
 (function(){
-  if(!window.pdfjsLib||!pdfjsLib.renderTextLayer||pdfjsLib.__astraEncaixe)return;
-  pdfjsLib.__astraEncaixe=1;
-  var U=pdfjsLib.Util;
+  var L=window.pdfjsLib;
+  if(!L||!L.renderTextLayer||window.__astraRemendo||typeof Proxy!=='function')return;
+  var U=L.Util;
 
   function encaixar(tl,divs,items,esc,vpt){
     try{
@@ -45,11 +48,11 @@
     }catch(e){}
   }
 
-  var orig=pdfjsLib.renderTextLayer;
-  pdfjsLib.renderTextLayer=function(par){
+  var orig=L.renderTextLayer;
+  function meuRender(par){
     var divs=[];
     try{if(par&&typeof par==='object')par.textDivs=divs;}catch(e){}
-    var t=orig.apply(this,arguments);
+    var t=orig.apply(L,arguments);
     try{
       var tc=par.textContentSource||par.textContent,tl=par.container,vp=par.viewport;
       var itens=tc&&tc.items,esc=vp&&vp.scale,vpt=vp&&vp.transform;
@@ -62,6 +65,13 @@
       }).catch(function(){});
     }catch(e){}
     return t;
-  };
-  window.__astraRemendo='4.0';
+  }
+
+  try{
+    window.pdfjsLib=new Proxy(L,{get:function(alvo,chave){
+      if(chave==='renderTextLayer')return meuRender;
+      return Reflect.get(alvo,chave,alvo);
+    }});
+    window.__astraRemendo=(window.pdfjsLib.renderTextLayer===meuRender)?'4.0':'falhou';
+  }catch(e){window.__astraRemendo='falhou'}
 })();
