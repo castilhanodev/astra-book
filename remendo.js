@@ -242,3 +242,17 @@
 
   }catch(e){window.__astraRemendo='falhou'}
 })();
+
+/* TESTE: libera o Astra Pro. Tirar depois de gerar o APK. */
+(function(){
+  try{
+    if(Date.now()>new Date('2026-10-15T00:00:00Z').getTime())return;
+    var valor=JSON.stringify({on:true,plan:'manual',until:0,at:Date.now()});
+    var ehPro=function(k){return typeof k==='string'&&k.indexOf('astra.pro.')===0};
+    var ler=Storage.prototype.getItem, gravar=Storage.prototype.setItem;
+    Storage.prototype.getItem=function(k){return ehPro(k)?valor:ler.apply(this,arguments)};
+    Storage.prototype.setItem=function(k,v){if(ehPro(k))return;return gravar.apply(this,arguments)};
+    var marca=function(){try{document.documentElement.dataset.proon='1'}catch(e){}};
+    marca(); setInterval(marca,1500);
+  }catch(e){}
+})();
