@@ -1,0 +1,18 @@
+# Material de desenvolvimento local e segredos
+work/
+node_modules/
+chave/
+*.jks
+*.keystore
+*.base64.txt
+SENHA*
+.env
+.env.*
+!*.example
+android/keystore.properties
+android/local.properties
+android/.gradle/
+android/build/
+android/app/build/
+__pycache__/
+*.pyc
