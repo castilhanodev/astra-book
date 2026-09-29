@@ -1,6 +1,6 @@
-# AstraBook — correção de seleção em PDF
+# AstraBook — continuidade técnica
 
-Atualizado em 29/09/2026. Projeto em testes: não publicar na Play Store nem atualizar site/produção sem pedido explícito do usuário.
+Atualizado em 29/09/2026. Projeto em testes: não publicar na Play Store nem atualizar site/produção sem pedido explícito do usuário. Branch atual: `teste/dicionario-mascote-fluidez`.
 
 ## Estado
 
@@ -14,14 +14,14 @@ Versão preparada para testes Android: `4.4-pdf-teste`, versionCode `26`, pacote
 
 - 456 pontos de geometria passaram em um PDF controlado de duas páginas, incluindo fontes incorporadas, itálico, acentos, texto girado, zoom, diferentes resoluções e substituição do canvas.
 - 38 seleções por eventos de pressão longa passaram no aplicativo no navegador, com importação real do PDF, tanto no tamanho padrão quanto em viewport 390 × 844.
-- Nos dois tamanhos passaram os três casos adicionais: dicionário recebe a palavra selecionada; pressão em margem vazia limpa a seleção; ajuste do intervalo atualiza a palavra consultada.
+- Nos dois tamanhos passaram dois casos adicionais: o dicionário recebe a palavra selecionada e a pressão em margem vazia limpa a seleção anterior. O caso sintético que estende o intervalo de “desconcertado” para “Ele” agora retorna palavra vazia neste Chrome; a mesma divergência ocorre na base anterior. Validar pelas alças em Android físico antes de considerar esse caso aprovado.
 - A primeira tentativa de integração não aguardava a introdução e exigia antecipadamente uma camada que é reconstruída no primeiro toque. O teste foi corrigido. Outro caso atingia a barra de destaque que cobria texto vertical; os casos independentes agora fecham a seleção anterior antes do toque.
 - Eventos sintéticos e viewport móvel não substituem o WebView e o toque em Android físico. Ainda validar num celular/tablet e em livros reais. PDFs com texto convertido em curvas ou fontes/modos não cobertos podem usar a camada original; PDFs escaneados sem texto não ganharam OCR.
 - O teste direto do remendo antigo só retornou fallback; não é uma comparação da taxa de acerto do aplicativo completo.
 
 ## Retomar em casa ou no escritório
 
-Use Git e Python 3.10 ou mais recente. Na primeira máquina, clone `https://github.com/castilhanodev/astra-book`. Use a branch `teste/selecao-pdf`, onde esta correção fica separada da main. Numa cópia existente, execute `git status` e preserve alterações locais antes de mudar de branch. Faça `git fetch origin`, selecione a branch e sincronize com `git pull --ff-only` quando o trabalho local permitir. Não use reset destrutivo.
+Use Git e Python 3.10 ou mais recente. Na primeira máquina, clone `https://github.com/castilhanodev/astra-book`. Use a branch `teste/dicionario-mascote-fluidez`, que inclui a correção de seleção e a etapa atual separadas da main. Numa cópia existente, execute `git status` e preserve alterações locais antes de mudar de branch. Faça `git fetch origin`, selecione a branch e sincronize com `git pull --ff-only` quando o trabalho local permitir. Não use reset destrutivo.
 
 Na raiz do repositório:
 
@@ -32,7 +32,7 @@ python -m http.server 8765 --bind 127.0.0.1 --directory work/projeto
 
 Abra `http://127.0.0.1:8765/testes/harness.html` e clique em Executar testes. Para a integração abra `http://127.0.0.1:8765/www/index-teste.html` e clique em Testar gesto mobile. A cópia de teste desativa a integração Firebase. O teste importa somente o PDF controlado e cria dados locais de teste; não usa uma conta real. Escolha `--destino work/outra-copia` para reconstruir sem sobrescrever uma pasta existente.
 
-O código editável estará em `work/projeto/www/index.html` e `work/projeto/www/patch.js`. Os testes estão em `work/projeto/testes/`. A pasta work é ignorada pelo Git: empacote mudanças em uma atualização posterior na ordenação alfabética e registre testes e decisões antes de enviar. A atualização e contém remendo.js, patch/www/index.html, patch/android/app/build.gradle e os testes. O fluxo herdado sobrescreve o remendo da raiz pelos ZIPs; editar somente aquele arquivo não basta.
+O código editável estará em `work/projeto/www/index.html` e `work/projeto/www/patch.js`. Os testes estão em `work/projeto/testes/`. A pasta work é ignorada pelo Git: empacote mudanças em uma atualização posterior na ordenação alfabética e registre testes e decisões antes de enviar. A atualização e contém remendo.js, patch/www/index.html, patch/android/app/build.gradle e os testes. A atualização f contém as melhorias atuais de `index.html` e o build.gradle da versão `4.5-melhorias-teste`, versionCode `27`. O fluxo herdado sobrescreve o remendo da raiz pelos ZIPs; editar somente aquele arquivo não basta.
 
 ## Build e publicação
 
@@ -52,4 +52,8 @@ Economia: GPT-5.6 Sol Médio para a continuidade normal; Luna Médio para tarefa
 
 Quando houver mudança de tarefa, avisar isso explicitamente e recomendar modelo/esforço antes de começar. Se a configuração atual servir, continuar; se recomendar troca, parar até o usuário confirmar.
 
-Próxima etapa técnica: baixar e instalar o APK do artifact no celular/tablet e validar pressão longa, seleção e dicionário em livros reais, sem publicar na Play Store.
+## Etapa 4.5 preparada
+
+`atualizacao_f.zip` melhora a honestidade e a qualidade do dicionário local, usa as poses transparentes existentes do mascote em novas reações e reduz trabalho gráfico desnecessário durante a virada de página. Leia `AUDITORIA-DICIONARIO-MASCOTE-FLUIDEZ.md` para a implementação, testes, limitações, licenças e comparação de APIs. SHA-256 do ZIP: `B03B7954B2803159B6900A783E399D9B208EA9BEF36AEAEE87607F830C89A4A8`.
+
+Próxima etapa técnica: gerar o APK de teste 4.5 na própria branch, baixar e instalar no celular/tablet e validar pressão longa, ajuste pelas alças, dicionário, animações e fluidez em livros reais, sem publicar na Play Store.

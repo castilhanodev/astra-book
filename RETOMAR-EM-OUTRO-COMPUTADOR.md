@@ -6,25 +6,26 @@ técnico, as decisões e os testes ficam nesta branch do GitHub.
 ## Início rápido
 
 1. Abra `https://github.com/castilhanodev/astra-book`.
-2. Selecione a branch `teste/selecao-pdf`.
+2. Selecione a branch `teste/dicionario-mascote-fluidez`.
 3. Abra uma nova tarefa no Codex associada ao repositório.
 4. Envie ao Codex o texto abaixo.
 
 ```text
 Continue o desenvolvimento do AstraBook pelo repositório
-https://github.com/castilhanodev/astra-book, branch teste/selecao-pdf.
+https://github.com/castilhanodev/astra-book, branch teste/dicionario-mascote-fluidez.
 Antes de alterar qualquer coisa, leia AGENTS.md, CONTINUIDADE.md,
-BUILD-TESTE.md e RETOMAR-EM-OUTRO-COMPUTADOR.md. Preserve a main, o site e a
+BUILD-TESTE.md, AUDITORIA-DICIONARIO-MASCOTE-FLUIDEZ.md e
+RETOMAR-EM-OUTRO-COMPUTADOR.md. Preserve a main, o site e a
 Play Store: o aplicativo ainda está em testes. O próximo passo é acompanhar
-meus testes do APK 4.4-pdf-teste em um aparelho Android, registrar os problemas
-que eu relatar, reproduzi-los e corrigir a branch de teste. Cuide sozinho das
+o build e meus testes do APK 4.5-melhorias-teste em um aparelho Android,
+registrar os problemas que eu relatar, reproduzi-los e corrigir a branch de teste. Cuide sozinho das
 operações rotineiras no GitHub. Nunca publique senhas, tokens ou keystores.
 ```
 
 ## Estado transferido
 
 - Repositório: `castilhanodev/astra-book`.
-- Branch de trabalho: `teste/selecao-pdf`.
+- Branch de trabalho: `teste/dicionario-mascote-fluidez`.
 - Base auditada: `main` em `64927b236dd5ed9d601abe384fc3acbd3d322b39`.
 - Correção principal: commit `4e98c41a61960504e26187d1c198a61038acf2c1`.
 - Versão Android de teste: `4.4-pdf-teste`, versionCode `26`, pacote
@@ -44,13 +45,19 @@ O manifesto e o conteúdo do APK foram conferidos. `index.html` e `patch.js`
 empacotados são idênticos aos arquivos que passaram nos testes locais. O build
 não publicou o aplicativo na Play Store e não alterou o site.
 
+A etapa seguinte está em `atualizacao_f.zip`: versão
+`4.5-melhorias-teste`, versionCode `27`, com melhorias no dicionário, mascote e
+fluidez. SHA-256: `B03B7954B2803159B6900A783E399D9B208EA9BEF36AEAEE87607F830C89A4A8`.
+Ainda não há APK 4.5 até o workflow da branch ser executado e conferido.
+
 ## Testes já realizados
 
 - 456/456 verificações de geometria passaram.
 - 38/38 seleções integradas por pressão longa passaram em dois tamanhos de
   tela simulados.
-- Em ambos passaram consulta da palavra no dicionário, limpeza da seleção ao
-  tocar em área vazia e atualização da palavra ao ajustar o intervalo.
+- Em ambos passaram consulta da palavra no dicionário e limpeza da seleção ao
+  tocar em área vazia. O teste sintético de extensão do intervalo retorna vazio
+  neste Chrome, inclusive na base anterior; validar as alças no Android.
 - Ainda falta validar toque real no WebView Android e livros reais do usuário.
 
 ## Teste que o usuário deve fazer no aparelho
@@ -86,6 +93,8 @@ correções normais na branch de teste estão autorizadas.
 
 - `CONTINUIDADE.md`: investigação, solução, limitações e comandos de teste.
 - `BUILD-TESTE.md`: build Android e artifact.
+- `AUDITORIA-DICIONARIO-MASCOTE-FLUIDEZ.md`: etapa 4.5, testes, fontes do
+  dicionário, licenças e opções de API.
 - `AGENTS.md`: regras permanentes de continuidade e preferências do usuário.
 - `preparar_projeto.py`: reconstrução portátil do projeto e testes.
 
