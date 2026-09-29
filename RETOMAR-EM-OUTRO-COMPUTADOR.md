@@ -58,8 +58,12 @@ seleção, proteção de desempenho no zoom, 15 consultas no dicionário, tutori
 mais rápido, quiz com mascote e sons desligáveis. SHA-256:
 `0F7DFE2F696397FF40BD883D5E5380C001422A1945D95F51135371CF7E6594B5`.
 Os testes locais e a reconstrução portátil passaram; detalhes em
-`TESTE-4.6.md`. O build Android 4.6 ainda deve ser registrado aqui quando
-concluir.
+`TESTE-4.6.md`. O build #33 passou:
+`https://github.com/castilhanodev/astra-book/actions/runs/36608205657`.
+Artifact:
+`https://github.com/castilhanodev/astra-book/actions/runs/36608205657/artifacts/11051774233`.
+O APK tem SHA-256
+`00EBF4F2B387E1A697DFF6B68A0A4F1A3262DBC0EBEB7145007EB39558E3258D`.
 
 ## Testes já realizados
 

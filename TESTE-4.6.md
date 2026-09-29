@@ -62,6 +62,21 @@ várias linhas, zoom por pinça e fluidez. PDFs escaneados sem camada de texto
 continuam sem seleção; páginas com texto vertical ou orientação incomum mantêm
 a ordem original para evitar uma reordenação incorreta.
 
-O próximo passo automatizado é gerar o APK/AAB pelo workflow manual da branch e
-conferir manifesto e hashes. O APK é apenas para teste. Publicar na Play Store
-continua dependendo de pedido explícito do usuário.
+## Build Android de teste
+
+O build #33 concluiu com sucesso no commit `dbe16a5`:
+https://github.com/castilhanodev/astra-book/actions/runs/36608205657 . Artifact:
+https://github.com/castilhanodev/astra-book/actions/runs/36608205657/artifacts/11051774233 .
+
+- Digest SHA-256 do artifact, informado pelo GitHub e conferido no arquivo
+  baixado: `53A7C6CB81813D7E97D6AC6F7976A75CF2650EDB8298953FCDE8B404AA590698`.
+- APK: `00EBF4F2B387E1A697DFF6B68A0A4F1A3262DBC0EBEB7145007EB39558E3258D`.
+- AAB: `3EC135C8317F1672BBE09521C21F96C89AA6521385F5D88B513480CA3A5F601B`.
+- Manifesto: `com.astrabook.app`, `4.6-selecao-zoom-quiz-teste`, versionCode
+  `28`, minSdk `24`, targetSdk `36`.
+- `assets/public/index.html` e `assets/public/patch.js` dentro do APK são
+  idênticos aos arquivos reconstruídos e testados.
+
+O APK é apenas para teste. O workflow não publicou na Play Store, não atualizou
+o site e não alterou a `main`. O próximo passo é instalar no tablet e testar com
+o PDF real. Publicar continua dependendo de pedido explícito do usuário.

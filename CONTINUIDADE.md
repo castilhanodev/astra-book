@@ -19,6 +19,13 @@ somente dos ZIPs repetiu a bateria. SHA-256 da atualização:
 `0F7DFE2F696397FF40BD883D5E5380C001422A1945D95F51135371CF7E6594B5`.
 Detalhes e limitações estão em `TESTE-4.6.md`.
 
+O build Android #33 concluiu com sucesso no commit `dbe16a5`:
+https://github.com/castilhanodev/astra-book/actions/runs/36608205657 . Artifact:
+https://github.com/castilhanodev/astra-book/actions/runs/36608205657/artifacts/11051774233 .
+Manifesto e conteúdo do APK foram conferidos. O APK tem SHA-256
+`00EBF4F2B387E1A697DFF6B68A0A4F1A3262DBC0EBEB7145007EB39558E3258D`.
+Não houve publicação na Play Store, no site ou na `main`.
+
 ## Estado
 
 Base auditada: main em `64927b236dd5ed9d601abe384fc3acbd3d322b39`, Android 4.3 / versionCode 24. O HTML e o patch reconstruídos seguindo o workflow são idênticos aos do APK 4.3 fornecido. O ZIP local d, versão 4.4 / 25, não estava no GitHub e não foi adotado: sua associação proporcional à quantidade de caracteres reproduziu a troca de uma palavra larga pela palavra estreita anterior.
@@ -75,4 +82,4 @@ Quando houver mudança de tarefa, avisar isso explicitamente e recomendar modelo
 
 O build Android #32 da versão `4.5-melhorias-teste`, versionCode `27`, foi concluído com sucesso: https://github.com/castilhanodev/astra-book/actions/runs/36575071678 . Artifact: https://github.com/castilhanodev/astra-book/actions/runs/36575071678/artifacts/11037410830 . O manifesto e os hashes do conteúdo foram conferidos; detalhes em `BUILD-TESTE.md`. O build não publicou na Play Store nem atualizou o site.
 
-Próxima etapa técnica: gerar o APK 4.6 da branch atual, conferir seu conteúdo e instalar no celular/tablet para validar a seleção arrastada, zoom, quiz, sons e fluidez em livros reais, sem publicar na Play Store.
+Próxima etapa técnica: instalar o APK 4.6 no celular/tablet e validar a seleção arrastada, zoom, quiz, sons e fluidez em livros reais, sem publicar na Play Store.

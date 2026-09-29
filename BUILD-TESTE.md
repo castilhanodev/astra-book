@@ -1,4 +1,27 @@
-# APK de teste 4.5 pronto — 29/09/2026
+# APK de teste 4.6 pronto — 29/09/2026
+
+O build Android #33 terminou com sucesso para o commit
+`dbe16a56ad57b9268300536d6081f64f647c3e38` da branch
+`teste/selecao-zoom-quiz`.
+
+- Build: https://github.com/castilhanodev/astra-book/actions/runs/36608205657
+- Pacote: https://github.com/castilhanodev/astra-book/actions/runs/36608205657/artifacts/11051774233
+- Artifact: `astra-book-play-store`, 37,2 MB, contendo APK e AAB.
+- SHA-256 do artifact: `53A7C6CB81813D7E97D6AC6F7976A75CF2650EDB8298953FCDE8B404AA590698`.
+- SHA-256 do APK: `00EBF4F2B387E1A697DFF6B68A0A4F1A3262DBC0EBEB7145007EB39558E3258D`.
+- SHA-256 do AAB: `3EC135C8317F1672BBE09521C21F96C89AA6521385F5D88B513480CA3A5F601B`.
+- Manifesto: pacote `com.astrabook.app`, versão
+  `4.6-selecao-zoom-quiz-teste`, versionCode `28`, minSdk `24`, targetSdk `36`.
+
+O conteúdo web dentro do APK coincide com o código que passou nos testes locais
+e reconstruídos. O workflow não publicou na Play Store, não alterou o site e não
+mudou a `main`.
+
+Teste primeiro a seleção arrastada em várias linhas e o zoom por pinça no tablet.
+Depois confira o quiz, os sons, o limite de 15 palavras e o tutorial. Detalhes
+técnicos e limitações estão em `TESTE-4.6.md`.
+
+## Build 4.5 anterior
 
 O build Android #32 terminou com sucesso para o commit
 `7f00d6d2cabe623e84bdc095854f3fbb9350042a` da branch
