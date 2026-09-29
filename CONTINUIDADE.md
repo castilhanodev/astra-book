@@ -1,6 +1,23 @@
 # AstraBook — continuidade técnica
 
-Atualizado em 29/09/2026. Projeto em testes: não publicar na Play Store nem atualizar site/produção sem pedido explícito do usuário. Branch atual: `teste/dicionario-mascote-fluidez`.
+Atualizado em 29/09/2026. Projeto em testes: não publicar na Play Store nem atualizar site/produção sem pedido explícito do usuário. Branch atual: `teste/selecao-zoom-quiz`.
+
+## Checkpoint 4.6 — seleção contínua, zoom, quiz e sons
+
+`atualizacao_g.zip` prepara `4.6-selecao-zoom-quiz-teste`, versionCode `28`.
+A ordem invisível das palavras de PDFs horizontais agora segue a posição visual,
+o que corrige seleções multilinha espalhadas pela ordem interna do arquivo. A
+pressão longa em margem vazia não vira a página. O zoom limita resolução e
+pré-carregamento em aparelhos fracos. O dicionário permite 15 palavras, abre
+sem tutorial próprio, o quiz ganhou reações com o Astra e o app recebeu sons
+curtos desligáveis.
+
+Os testes passaram em dois tamanhos: 38/38 palavras e quatro verificações
+adicionais, incluindo extensão e seleção multilinha. Quiz, sons, limite de 15 e
+zoom 4× abaixo de 8 milhões de pixels também passaram. O projeto reconstruído
+somente dos ZIPs repetiu a bateria. SHA-256 da atualização:
+`0F7DFE2F696397FF40BD883D5E5380C001422A1945D95F51135371CF7E6594B5`.
+Detalhes e limitações estão em `TESTE-4.6.md`.
 
 ## Estado
 
@@ -21,7 +38,7 @@ Versão preparada para testes Android: `4.4-pdf-teste`, versionCode `26`, pacote
 
 ## Retomar em casa ou no escritório
 
-Use Git e Python 3.10 ou mais recente. Na primeira máquina, clone `https://github.com/castilhanodev/astra-book`. Use a branch `teste/dicionario-mascote-fluidez`, que inclui a correção de seleção e a etapa atual separadas da main. Numa cópia existente, execute `git status` e preserve alterações locais antes de mudar de branch. Faça `git fetch origin`, selecione a branch e sincronize com `git pull --ff-only` quando o trabalho local permitir. Não use reset destrutivo.
+Use Git e Python 3.10 ou mais recente. Na primeira máquina, clone `https://github.com/castilhanodev/astra-book`. Use a branch `teste/selecao-zoom-quiz`, que inclui as etapas anteriores e a correção atual separadas da main. Numa cópia existente, execute `git status` e preserve alterações locais antes de mudar de branch. Faça `git fetch origin`, selecione a branch e sincronize com `git pull --ff-only` quando o trabalho local permitir. Não use reset destrutivo.
 
 Na raiz do repositório:
 
@@ -58,4 +75,4 @@ Quando houver mudança de tarefa, avisar isso explicitamente e recomendar modelo
 
 O build Android #32 da versão `4.5-melhorias-teste`, versionCode `27`, foi concluído com sucesso: https://github.com/castilhanodev/astra-book/actions/runs/36575071678 . Artifact: https://github.com/castilhanodev/astra-book/actions/runs/36575071678/artifacts/11037410830 . O manifesto e os hashes do conteúdo foram conferidos; detalhes em `BUILD-TESTE.md`. O build não publicou na Play Store nem atualizou o site.
 
-Próxima etapa técnica: instalar o APK 4.5 no celular/tablet e validar pressão longa, ajuste pelas alças, dicionário, animações e fluidez em livros reais, sem publicar na Play Store.
+Próxima etapa técnica: gerar o APK 4.6 da branch atual, conferir seu conteúdo e instalar no celular/tablet para validar a seleção arrastada, zoom, quiz, sons e fluidez em livros reais, sem publicar na Play Store.
