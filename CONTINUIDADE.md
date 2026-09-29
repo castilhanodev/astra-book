@@ -1,6 +1,6 @@
 # AstraBook — correção de seleção em PDF
 
-Atualizado em 28/09/2026. Projeto em testes: não publicar na Play Store nem atualizar site/produção sem pedido explícito do usuário.
+Atualizado em 29/09/2026. Projeto em testes: não publicar na Play Store nem atualizar site/produção sem pedido explícito do usuário.
 
 ## Estado
 
@@ -40,13 +40,13 @@ O workflow Gerar app Android extrai projeto.zip, depois atualizacao*.zip em orde
 
 O workflow Publicar páginas tem gatilhos separados e pode atualizar o site quando projeto.zip, hosting/** ou firebase-config.js mudam na main. Não alterar esses arquivos ou acionar esse workflow nesta fase. Site existente: https://castilhanodev.github.io/astra-book/ .
 
-O build de teste desta correção foi concluído com sucesso: https://github.com/castilhanodev/astra-book/actions/runs/36481932859 . O artifact `astra-book-play-store` tem 37,2 MB e contém APK/AAB. Download: https://github.com/castilhanodev/astra-book/actions/runs/36481932859/artifacts/10997335319 . SHA-256 informado pelo GitHub: `ac25b4bdae1075bfa6fbffa3b3cfa024869590fbd8f8b203ba25144880a4dadd`. Ainda não foi validado em aparelho Android.
+O build de teste desta correção foi concluído com sucesso: https://github.com/castilhanodev/astra-book/actions/runs/36481932859 . O artifact `astra-book-play-store` tem 37,2 MB e contém APK/AAB. Download: https://github.com/castilhanodev/astra-book/actions/runs/36481932859/artifacts/10997335319 . SHA-256 informado pelo GitHub e conferido depois do download: `ac25b4bdae1075bfa6fbffa3b3cfa024869590fbd8f8b203ba25144880a4dadd`. O APK extraído tem SHA-256 `0CE8F1AD1CB7D201A4C438E401899FEF619E66C4295199C70644618BDD421742`; o AAB, `430DEC2F5ACCB0EA69A0A5E4718DC4144EA23DF0EAB8506174DD9013780C6C0D`. O manifesto confirmou pacote `com.astrabook.app`, versão `4.4-pdf-teste`, versionCode `26`, minSdk `24` e targetSdk `36`. Os arquivos `index.html` e `patch.js` empacotados coincidem com os arquivos testados. Ainda não foi validado em aparelho Android.
 
 Assinatura usa os Secrets existentes ASTRA_KEYSTORE_B64 e ASTRA_KEYSTORE_PASSWORD. Não incluir keystore, senhas ou tokens em código, ZIPs, documentação ou conversa. Nunca copiar o arquivo confidencial de assinatura fornecido pelo usuário.
 
 ## Forma de trabalho
 
-O usuário alterna entre dois computadores. GitHub é a referência compartilhada; sessão do navegador, Downloads e caminhos locais não são transferidos automaticamente. Leia este arquivo e AGENTS.md antes de continuar.
+O usuário alterna entre dois computadores. GitHub é a referência compartilhada; sessão do navegador, Downloads e caminhos locais não são transferidos automaticamente. Para uma nova tarefa, começar por `RETOMAR-EM-OUTRO-COMPUTADOR.md`, depois ler este arquivo e `AGENTS.md`.
 
 Economia: GPT-5.6 Sol Médio para a continuidade normal; Luna Médio para tarefas pequenas; Sol Alto somente para bugs difíceis. Evitar Astra e recomendá-lo apenas se houver evidência concreta de que Sol não é suficiente. Ao sugerir uma TROCA, explique a razão e pare: “Quando mudar, me avise que eu continuo.” Aguarde confirmação antes de trabalhar. O usuário confirmou GPT-5.6 Sol nesta etapa.
 

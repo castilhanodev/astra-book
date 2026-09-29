@@ -1,6 +1,6 @@
 # AstraBook — continuidade entre computadores
 
-Leia CONTINUIDADE.md antes de trabalhar. A origem compartilhada e o repositório `castilhanodev/astra-book`; não dependa de conversas, Downloads, pastas, chaves ou sessões de navegador de um computador específico.
+Leia `RETOMAR-EM-OUTRO-COMPUTADOR.md` e `CONTINUIDADE.md` antes de trabalhar. A origem compartilhada e o repositório `castilhanodev/astra-book`; não dependa de conversas, Downloads, pastas, chaves ou sessões de navegador de um computador específico.
 
 O aplicativo está em testes. Não publicar na Play Store nem atualizar site/produção agora. A branch `teste/selecao-pdf` guarda a correção experimental; consultar seu estado antes de construir pacotes.
 
@@ -12,7 +12,7 @@ Ao perceber mudança de tarefa, avisar explicitamente antes de começar: “Esta
 
 - Preserve o aplicativo, design, funcionalidades e dados existentes. Prioridade atual: seleção de palavra em PDF por pressão prolongada em celular/tablet, seguida de consulta ao dicionário.
 - O usuário autorizou investigação, correções, testes e envio das alterações ao GitHub. Publicação na Play Store, substituição de produção, alteração de credenciais e operações destrutivas exigem confirmação específica.
-- Nunca publique keystores, senhas, tokens ou credenciais; mantenha assinatura nos Secrets existentes. Não solicite segredos no chat.
+- Nunca publique keystores, senhas, tokens ou credenciais; mantenha assinatura nos GitHub Actions Secrets existentes. O usuário autorizou guardar ali as credenciais necessárias ao projeto. Já existem, pelos nomes confirmados, `ASTRA_KEYSTORE_B64` e `ASTRA_KEYSTORE_PASSWORD`. Não revele, substitua ou remova valores sem necessidade técnica e não solicite segredos no chat.
 - Antes de editar, verifique `git status`, branch e alterações remotas. Preserve trabalho local e resolva divergências. Nunca use reset destrutivo para trocar de computador.
 - Reconstitua o projeto com `python preparar_projeto.py --testes`, usando uma pasta nova. O script reproduz a ordem dos ZIPs do workflow e não depende de caminhos absolutos.
 - Ao terminar, registre alteração, teste, limitações, commit/build e próxima etapa em CONTINUIDADE.md e envie o trabalho ao GitHub. Não diga que outro computador recebeu arquivos que ainda existem apenas localmente.
