@@ -40,7 +40,7 @@ O workflow Gerar app Android extrai projeto.zip, depois atualizacao*.zip em orde
 
 O workflow Publicar páginas tem gatilhos separados e pode atualizar o site quando projeto.zip, hosting/** ou firebase-config.js mudam na main. Não alterar esses arquivos ou acionar esse workflow nesta fase. Site existente: https://castilhanodev.github.io/astra-book/ .
 
-Último build da base consultado: https://github.com/castilhanodev/astra-book/actions/runs/36410912208 . Não confundir seu artifact com esta correção. Nenhum APK novo foi validado em aparelho até este registro.
+O build de teste desta correção foi concluído com sucesso: https://github.com/castilhanodev/astra-book/actions/runs/36481932859 . O artifact `astra-book-play-store` tem 37,2 MB e contém APK/AAB. Download: https://github.com/castilhanodev/astra-book/actions/runs/36481932859/artifacts/10997335319 . SHA-256 informado pelo GitHub: `ac25b4bdae1075bfa6fbffa3b3cfa024869590fbd8f8b203ba25144880a4dadd`. Ainda não foi validado em aparelho Android.
 
 Assinatura usa os Secrets existentes ASTRA_KEYSTORE_B64 e ASTRA_KEYSTORE_PASSWORD. Não incluir keystore, senhas ou tokens em código, ZIPs, documentação ou conversa. Nunca copiar o arquivo confidencial de assinatura fornecido pelo usuário.
 
@@ -48,6 +48,8 @@ Assinatura usa os Secrets existentes ASTRA_KEYSTORE_B64 e ASTRA_KEYSTORE_PASSWOR
 
 O usuário alterna entre dois computadores. GitHub é a referência compartilhada; sessão do navegador, Downloads e caminhos locais não são transferidos automaticamente. Leia este arquivo e AGENTS.md antes de continuar.
 
-Economia: Sol Médio/Alto para manutenção; Luna Médio para tarefas pequenas; Astra Alto para investigação difícil. Ao sugerir uma TROCA, explique a razão e pare: “Quando mudar, me avise que eu continuo.” Aguarde confirmação antes de trabalhar. O usuário confirmou Sol nesta etapa.
+Economia: GPT-5.6 Sol Médio para a continuidade normal; Luna Médio para tarefas pequenas; Sol Alto somente para bugs difíceis. Evitar Astra e recomendá-lo apenas se houver evidência concreta de que Sol não é suficiente. Ao sugerir uma TROCA, explique a razão e pare: “Quando mudar, me avise que eu continuo.” Aguarde confirmação antes de trabalhar. O usuário confirmou GPT-5.6 Sol nesta etapa.
 
-Próxima etapa técnica: gerar APK de teste desta branch pelo workflow Android e validar pressão longa, seleção e dicionário em celular/tablet com livros reais, sem publicar na Play Store.
+Quando houver mudança de tarefa, avisar isso explicitamente e recomendar modelo/esforço antes de começar. Se a configuração atual servir, continuar; se recomendar troca, parar até o usuário confirmar.
+
+Próxima etapa técnica: baixar e instalar o APK do artifact no celular/tablet e validar pressão longa, seleção e dicionário em livros reais, sem publicar na Play Store.

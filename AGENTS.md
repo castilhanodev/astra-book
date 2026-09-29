@@ -6,6 +6,10 @@ O aplicativo está em testes. Não publicar na Play Store nem atualizar site/pro
 
 Antes de cada novo pedido, recomendar modelo e esforço proporcionais à tarefa. Ao sugerir TROCA de modelo, explicar o motivo e parar: “Quando mudar, me avise que eu continuo.” Retomar só após confirmação. O usuário confirmou Sol nesta etapa. Economizar: Luna Médio para tarefas pequenas, Sol Médio/Alto para manutenção, Astra Alto para investigação difícil. Não trocar automaticamente nem delegar sem autorização.
 
+Preferência reforçada em 29/09/2026: evitar Astra. GPT-5.6 Sol Médio é a configuração normal para continuar o aplicativo; elevar para Alto somente quando um bug difícil justificar. Recomendar Astra apenas se houver evidência concreta de que Sol não é suficiente.
+
+Ao perceber mudança de tarefa, avisar explicitamente antes de começar: “Estamos mudando de tarefa. Para esta, recomendo [modelo] com esforço [nível].” Se isso exigir trocar a configuração atual, parar e aguardar confirmação. Se a configuração atual já for adequada, informar e continuar.
+
 - Preserve o aplicativo, design, funcionalidades e dados existentes. Prioridade atual: seleção de palavra em PDF por pressão prolongada em celular/tablet, seguida de consulta ao dicionário.
 - O usuário autorizou investigação, correções, testes e envio das alterações ao GitHub. Publicação na Play Store, substituição de produção, alteração de credenciais e operações destrutivas exigem confirmação específica.
 - Nunca publique keystores, senhas, tokens ou credenciais; mantenha assinatura nos Secrets existentes. Não solicite segredos no chat.
