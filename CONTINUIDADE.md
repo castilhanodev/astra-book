@@ -1,6 +1,25 @@
 # AstraBook — continuidade técnica
 
-Atualizado em 29/09/2026. Projeto em testes: não publicar na Play Store nem atualizar site/produção sem pedido explícito do usuário. Branch atual: `teste/selecao-zoom-quiz`.
+Atualizado em 29/09/2026. Projeto em testes: não publicar na Play Store nem atualizar site/produção sem pedido explícito do usuário. Branch atual: `teste/preparacao-play-store`.
+
+## Checkpoint 4.7 — candidato para avaliação e correções móveis
+
+`atualizacao_h.zip` prepara `4.7-candidato-play-teste`, versionCode `29`. O
+login Google e anúncios foram retirados do pacote; o avaliador entra pelo botão
+“Testar o aplicativo sem criar conta”, recebe um perfil local com todos os
+recursos liberados e não inicia cobrança. Preços fixos e a promessa de mês
+grátis foram removidos: os valores vêm da Play Store.
+
+Além das correções de seleção, zoom, quiz, sons, animação, tela acesa e páginas
+válidas, a interface móvel agora fecha abas inferiores ao arrastar o topo, usa
+duas colunas alinhadas na estante e mantém o botão Próxima do quiz acima da
+barra de navegação do Android. Os testes passaram em 900 × 900 e 390 × 844:
+38/38 seleções em cada tamanho, seleção contínua, estatística de três minutos,
+quiz e reação, botão seguro, gesto da aba, estante, som, tela acesa e limite de
+zoom. Consulte `TESTE-4.7.md` e `AUDITORIA-PLAY-STORE-4.7.md`.
+
+Esta branch é candidata a teste em aparelho. Não enviar o AAB à Play Store,
+não atualizar a main e não publicar o site antes da autorização explícita.
 
 ## Checkpoint 4.6 — seleção contínua, zoom, quiz e sons
 
@@ -45,7 +64,7 @@ Versão preparada para testes Android: `4.4-pdf-teste`, versionCode `26`, pacote
 
 ## Retomar em casa ou no escritório
 
-Use Git e Python 3.10 ou mais recente. Na primeira máquina, clone `https://github.com/castilhanodev/astra-book`. Use a branch `teste/selecao-zoom-quiz`, que inclui as etapas anteriores e a correção atual separadas da main. Numa cópia existente, execute `git status` e preserve alterações locais antes de mudar de branch. Faça `git fetch origin`, selecione a branch e sincronize com `git pull --ff-only` quando o trabalho local permitir. Não use reset destrutivo.
+Use Git e Python 3.10 ou mais recente. Na primeira máquina, clone `https://github.com/castilhanodev/astra-book`. Use a branch `teste/preparacao-play-store`, que inclui as etapas anteriores e a correção atual separadas da main. Numa cópia existente, execute `git status` e preserve alterações locais antes de mudar de branch. Faça `git fetch origin`, selecione a branch e sincronize com `git pull --ff-only` quando o trabalho local permitir. Não use reset destrutivo.
 
 Na raiz do repositório:
 
@@ -82,4 +101,4 @@ Quando houver mudança de tarefa, avisar isso explicitamente e recomendar modelo
 
 O build Android #32 da versão `4.5-melhorias-teste`, versionCode `27`, foi concluído com sucesso: https://github.com/castilhanodev/astra-book/actions/runs/36575071678 . Artifact: https://github.com/castilhanodev/astra-book/actions/runs/36575071678/artifacts/11037410830 . O manifesto e os hashes do conteúdo foram conferidos; detalhes em `BUILD-TESTE.md`. O build não publicou na Play Store nem atualizou o site.
 
-Próxima etapa técnica: instalar o APK 4.6 no celular/tablet e validar a seleção arrastada, zoom, quiz, sons e fluidez em livros reais, sem publicar na Play Store.
+Próxima etapa técnica: instalar o APK 4.7 no celular/tablet e validar seleção arrastada, zoom, quiz, sons, fluidez, fechamento das abas, estante móvel, botão Próxima e modo de avaliação, sem publicar na Play Store.

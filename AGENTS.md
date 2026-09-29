@@ -2,7 +2,7 @@
 
 Leia `RETOMAR-EM-OUTRO-COMPUTADOR.md` e `CONTINUIDADE.md` antes de trabalhar. A origem compartilhada e o repositório `castilhanodev/astra-book`; não dependa de conversas, Downloads, pastas, chaves ou sessões de navegador de um computador específico.
 
-O aplicativo está em testes. Não publicar na Play Store nem atualizar site/produção agora. A branch `teste/selecao-zoom-quiz` guarda a etapa atual; ela inclui as etapas de `teste/selecao-pdf` e `teste/dicionario-mascote-fluidez`. Consultar `TESTE-4.6.md` antes de construir pacotes.
+O aplicativo está em testes. Não publicar na Play Store nem atualizar site/produção agora. A branch `teste/preparacao-play-store` guarda a etapa atual; ela inclui as etapas de `teste/selecao-pdf`, `teste/dicionario-mascote-fluidez` e `teste/selecao-zoom-quiz`. Consultar `TESTE-4.7.md` e `AUDITORIA-PLAY-STORE-4.7.md` antes de construir pacotes.
 
 Antes de cada novo pedido, recomendar modelo e esforço proporcionais à tarefa. Ao sugerir TROCA de modelo, explicar o motivo e parar: “Quando mudar, me avise que eu continuo.” Retomar só após confirmação. O usuário confirmou Sol nesta etapa. Economizar: Luna Médio para tarefas pequenas, Sol Médio/Alto para manutenção, Astra Alto para investigação difícil. Não trocar automaticamente nem delegar sem autorização.
 

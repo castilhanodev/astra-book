@@ -6,18 +6,18 @@ técnico, as decisões e os testes ficam nesta branch do GitHub.
 ## Início rápido
 
 1. Abra `https://github.com/castilhanodev/astra-book`.
-2. Selecione a branch `teste/selecao-zoom-quiz`.
+2. Selecione a branch `teste/preparacao-play-store`.
 3. Abra uma nova tarefa no Codex associada ao repositório.
 4. Envie ao Codex o texto abaixo.
 
 ```text
 Continue o desenvolvimento do AstraBook pelo repositório
-https://github.com/castilhanodev/astra-book, branch teste/selecao-zoom-quiz.
+https://github.com/castilhanodev/astra-book, branch teste/preparacao-play-store.
 Antes de alterar qualquer coisa, leia AGENTS.md, CONTINUIDADE.md,
-BUILD-TESTE.md, TESTE-4.6.md, AUDITORIA-DICIONARIO-MASCOTE-FLUIDEZ.md e
+BUILD-TESTE.md, TESTE-4.7.md, AUDITORIA-PLAY-STORE-4.7.md e
 RETOMAR-EM-OUTRO-COMPUTADOR.md. Preserve a main, o site e a
 Play Store: o aplicativo ainda está em testes. O próximo passo é acompanhar
-o build e meus testes do APK 4.6-selecao-zoom-quiz-teste em um aparelho Android,
+o build e meus testes do APK 4.7-candidato-play-teste em um aparelho Android,
 registrar os problemas que eu relatar, reproduzi-los e corrigir a branch de teste. Cuide sozinho das
 operações rotineiras no GitHub. Nunca publique senhas, tokens ou keystores.
 ```
@@ -25,7 +25,7 @@ operações rotineiras no GitHub. Nunca publique senhas, tokens ou keystores.
 ## Estado transferido
 
 - Repositório: `castilhanodev/astra-book`.
-- Branch de trabalho: `teste/selecao-zoom-quiz`.
+- Branch de trabalho: `teste/preparacao-play-store`.
 - Base auditada: `main` em `64927b236dd5ed9d601abe384fc3acbd3d322b39`.
 - Correção principal: commit `4e98c41a61960504e26187d1c198a61038acf2c1`.
 - Versão Android de teste: `4.4-pdf-teste`, versionCode `26`, pacote
@@ -64,6 +64,14 @@ Artifact:
 `https://github.com/castilhanodev/astra-book/actions/runs/36608205657/artifacts/11051774233`.
 O APK tem SHA-256
 `00EBF4F2B387E1A697DFF6B68A0A4F1A3262DBC0EBEB7145007EB39558E3258D`.
+
+A etapa mais recente está em `atualizacao_h.zip`: versão
+`4.7-candidato-play-teste`, versionCode `29`. Ela reúne as correções de PDF,
+zoom, quiz, sons e estatísticas, retira Google e anúncios do pacote, oferece
+acesso completo ao avaliador sem cobrança e corrige abas, estante e botão do
+quiz em celulares. Consulte `TESTE-4.7.md` e
+`AUDITORIA-PLAY-STORE-4.7.md`. SHA-256 do ZIP:
+`1C817A87D7D59A6CC5F5169C6D61E37E06C006A0BA82F84BF081F5FAE9B9D541`.
 
 ## Testes já realizados
 
