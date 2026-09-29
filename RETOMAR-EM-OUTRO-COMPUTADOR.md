@@ -48,7 +48,9 @@ não publicou o aplicativo na Play Store e não alterou o site.
 A etapa seguinte está em `atualizacao_f.zip`: versão
 `4.5-melhorias-teste`, versionCode `27`, com melhorias no dicionário, mascote e
 fluidez. SHA-256: `B03B7954B2803159B6900A783E399D9B208EA9BEF36AEAEE87607F830C89A4A8`.
-Ainda não há APK 4.5 até o workflow da branch ser executado e conferido.
+O build #32 passou: `https://github.com/castilhanodev/astra-book/actions/runs/36575071678`.
+Artifact: `https://github.com/castilhanodev/astra-book/actions/runs/36575071678/artifacts/11037410830`.
+O APK foi conferido; manifesto e hashes estão em `BUILD-TESTE.md`.
 
 ## Testes já realizados
 

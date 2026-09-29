@@ -56,4 +56,6 @@ Quando houver mudança de tarefa, avisar isso explicitamente e recomendar modelo
 
 `atualizacao_f.zip` melhora a honestidade e a qualidade do dicionário local, usa as poses transparentes existentes do mascote em novas reações e reduz trabalho gráfico desnecessário durante a virada de página. Leia `AUDITORIA-DICIONARIO-MASCOTE-FLUIDEZ.md` para a implementação, testes, limitações, licenças e comparação de APIs. SHA-256 do ZIP: `B03B7954B2803159B6900A783E399D9B208EA9BEF36AEAEE87607F830C89A4A8`.
 
-Próxima etapa técnica: gerar o APK de teste 4.5 na própria branch, baixar e instalar no celular/tablet e validar pressão longa, ajuste pelas alças, dicionário, animações e fluidez em livros reais, sem publicar na Play Store.
+O build Android #32 da versão `4.5-melhorias-teste`, versionCode `27`, foi concluído com sucesso: https://github.com/castilhanodev/astra-book/actions/runs/36575071678 . Artifact: https://github.com/castilhanodev/astra-book/actions/runs/36575071678/artifacts/11037410830 . O manifesto e os hashes do conteúdo foram conferidos; detalhes em `BUILD-TESTE.md`. O build não publicou na Play Store nem atualizou o site.
+
+Próxima etapa técnica: instalar o APK 4.5 no celular/tablet e validar pressão longa, ajuste pelas alças, dicionário, animações e fluidez em livros reais, sem publicar na Play Store.

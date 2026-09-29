@@ -53,6 +53,11 @@ um vídeo pesado nem gerar outro desenho nesta etapa.
 SHA-256 de `atualizacao_f.zip`:
 `B03B7954B2803159B6900A783E399D9B208EA9BEF36AEAEE87607F830C89A4A8`.
 
+O build Android #32 concluiu com sucesso:
+https://github.com/castilhanodev/astra-book/actions/runs/36575071678 . O APK e o
+AAB estão no artifact `astra-book-play-store`; hashes e manifesto constam em
+`BUILD-TESTE.md`.
+
 ## Por que o dicionário atual falha
 
 As definições offline vêm do Dicionário Aberto, baseado em uma obra histórica
