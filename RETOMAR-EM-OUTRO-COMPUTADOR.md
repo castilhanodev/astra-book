@@ -95,6 +95,19 @@ dois tamanhos. O tutorial foi reduzido e a abertura ampliada. Consulte
 `TESTE-4.8.md`. SHA-256:
 `C63453BDD6BCABEBF8EC9A3AF08FEE81A6305275C34D59EFCBC193FE12369399`.
 
+O build #35 da versão 4.8 passou:
+`https://github.com/castilhanodev/astra-book/actions/runs/36727358743`.
+Artifact:
+`https://github.com/castilhanodev/astra-book/actions/runs/36727358743/artifacts/11102703111`.
+SHA-256 do ZIP:
+`28BDF2C2EBD6C76D54366157AEC4751E2E873D9555AA2799C0A2D524E0CCFE98`.
+SHA-256 do APK:
+`F9A073669855395AFA7F0C09D79E2C9CEFEA2F0CA6C27A7EF828F8384D18B0C7`.
+SHA-256 do AAB:
+`3C14C06CBCB569B6CE98150F60F1677C3390EBD3F7A522BD2D4DABA5047DD81B`.
+O APK contém os arquivos testados e usa o mesmo certificado das versões
+anteriores. Nenhuma publicação foi feita.
+
 ## Testes já realizados
 
 - 456/456 verificações de geometria passaram.
@@ -138,7 +151,7 @@ correções normais na branch de teste estão autorizadas.
 - `CONTINUIDADE.md`: investigação, solução, limitações e comandos de teste.
 - `BUILD-TESTE.md`: builds Android e artifacts já conferidos.
 - `TESTE-4.6.md`: seleção contínua, zoom, quiz, sons e validação portátil.
-- `TESTE-4.7.md`: candidato atual, testes móveis simulados e build #34.
+- `TESTE-4.7.md`: candidato anterior, testes móveis simulados e build #34.
 - `TESTE-4.8.md`: correção do intervalo visual após o teste físico do APK 4.7.
 - `AUDITORIA-PLAY-STORE-4.7.md`: pendências para a futura submissão à Play Store.
 - `AUDITORIA-DICIONARIO-MASCOTE-FLUIDEZ.md`: etapa 4.5, testes, fontes do

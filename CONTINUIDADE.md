@@ -24,8 +24,20 @@ arquivos do repositório repetiu toda a bateria. Consulte `TESTE-4.8.md`.
 
 SHA-256 de `atualizacao_i.zip`:
 `C63453BDD6BCABEBF8EC9A3AF08FEE81A6305275C34D59EFCBC193FE12369399`.
-Ainda falta gerar e validar o APK 4.8 no mesmo aparelho e livro. Não publicar na
-Play Store, `main` ou site.
+O APK 4.8 foi gerado; ainda falta validá-lo no mesmo aparelho e livro. Não
+publicar na Play Store, `main` ou site.
+
+O build Android #35 concluiu com sucesso no commit `8b340f0`:
+https://github.com/castilhanodev/astra-book/actions/runs/36727358743 . Artifact:
+https://github.com/castilhanodev/astra-book/actions/runs/36727358743/artifacts/11102703111 .
+O digest do artifact foi conferido:
+`28BDF2C2EBD6C76D54366157AEC4751E2E873D9555AA2799C0A2D524E0CCFE98`.
+O APK tem SHA-256
+`F9A073669855395AFA7F0C09D79E2C9CEFEA2F0CA6C27A7EF828F8384D18B0C7`;
+o AAB,
+`3C14C06CBCB569B6CE98150F60F1677C3390EBD3F7A522BD2D4DABA5047DD81B`.
+Conteúdo web e assinatura foram conferidos. Main, site e Play Store não foram
+alterados. Próxima etapa: repetir no aparelho o gesto que falhou na 4.7.
 
 ## Checkpoint 4.7 — candidato para avaliação e correções móveis
 

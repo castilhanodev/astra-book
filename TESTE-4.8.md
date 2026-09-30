@@ -58,3 +58,26 @@ A atualização é `atualizacao_i.zip`. SHA-256:
 Ainda é necessário instalar o novo APK em Android físico e repetir o gesto no
 mesmo livro da captura. Não enviar o AAB à Play Store antes dessa validação e da
 autorização explícita do usuário.
+
+## Build Android verificado
+
+O build manual #35 concluiu com sucesso no commit
+`8b340f00086e79d0740568f970ca1320e0f71fbf`:
+https://github.com/castilhanodev/astra-book/actions/runs/36727358743 .
+
+Artifact `astra-book-play-store`:
+https://github.com/castilhanodev/astra-book/actions/runs/36727358743/artifacts/11102703111 .
+SHA-256 do ZIP informado pelo GitHub e conferido depois do download:
+`28BDF2C2EBD6C76D54366157AEC4751E2E873D9555AA2799C0A2D524E0CCFE98`.
+
+- APK: `AstraBook-4.8-selecao-visual-teste.apk`, 15.428.711 bytes, SHA-256
+  `F9A073669855395AFA7F0C09D79E2C9CEFEA2F0CA6C27A7EF828F8384D18B0C7`;
+- AAB: `AstraBook-4.8-selecao-visual-teste.aab`, 15.204.653 bytes, SHA-256
+  `3C14C06CBCB569B6CE98150F60F1677C3390EBD3F7A522BD2D4DABA5047DD81B`.
+
+Os arquivos web dentro do APK coincidem por SHA-256 com a reconstrução testada.
+O APK usa assinatura v2 e o mesmo certificado de upload das versões 4.6 e 4.7;
+SHA-256 do certificado:
+`464FE4EFE945359566AE09683E949953FF828AC5EB96C6E840DAA0D8FD1C8284`.
+Não há plugin de AdMob nem autenticação Google no pacote. O build não publicou
+na Play Store, na `main` ou no site.
