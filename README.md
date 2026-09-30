@@ -8,9 +8,10 @@ O desenvolvimento atual está na branch
 `teste/preparacao-play-store`. Para continuar em outro computador ou em uma nova tarefa
 do Codex, abra [RETOMAR-EM-OUTRO-COMPUTADOR.md](RETOMAR-EM-OUTRO-COMPUTADOR.md).
 
-A etapa atual prepara o candidato 4.7 para testes: corrige seleção em PDF,
-fluidez, quiz, sons, tela acesa, estatísticas de páginas, interface móvel e o
-acesso completo do avaliador. Leia [TESTE-4.7.md](TESTE-4.7.md),
+A etapa atual prepara a versão 4.8 de teste. Ela corrige a seleção e o
+marca-texto descontínuos observados no Android, reduz os tutoriais e amplia o
+tempo das dicas de abertura, preservando as melhorias do candidato 4.7. Leia
+[TESTE-4.8.md](TESTE-4.8.md), [TESTE-4.7.md](TESTE-4.7.md),
 [AUDITORIA-PLAY-STORE-4.7.md](AUDITORIA-PLAY-STORE-4.7.md) e
 [CONTINUIDADE.md](CONTINUIDADE.md).
 

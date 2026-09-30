@@ -14,10 +14,10 @@ técnico, as decisões e os testes ficam nesta branch do GitHub.
 Continue o desenvolvimento do AstraBook pelo repositório
 https://github.com/castilhanodev/astra-book, branch teste/preparacao-play-store.
 Antes de alterar qualquer coisa, leia AGENTS.md, CONTINUIDADE.md,
-BUILD-TESTE.md, TESTE-4.7.md, AUDITORIA-PLAY-STORE-4.7.md e
+BUILD-TESTE.md, TESTE-4.8.md, TESTE-4.7.md, AUDITORIA-PLAY-STORE-4.7.md e
 RETOMAR-EM-OUTRO-COMPUTADOR.md. Preserve a main, o site e a
 Play Store: o aplicativo ainda está em testes. O próximo passo é acompanhar
-meus testes do APK 4.7-candidato-play-teste em um aparelho Android,
+o build e meus testes do APK 4.8-selecao-visual-teste em um aparelho Android,
 registrar os problemas que eu relatar, reproduzi-los e corrigir a branch de teste. Cuide sozinho das
 operações rotineiras no GitHub. Nunca publique senhas, tokens ou keystores.
 ```
@@ -86,6 +86,15 @@ SHA-256 do AAB:
 O conteúdo empacotado coincide com a versão testada e a assinatura usa o mesmo
 certificado do APK 4.6. Main, site e Play Store permaneceram intactos.
 
+A correção posterior está em `atualizacao_i.zip`: versão
+`4.8-selecao-visual-teste`, versionCode `30`. O APK 4.7 falhou no teste físico
+de seleção longa porque o WebView seguiu a ordem interna embaralhada do PDF.
+A 4.8 ordena as caixas visualmente e usa essa lista para seleção, cópia e
+marca-texto. O teste inverte a ordem dos nós propositalmente e ainda passa em
+dois tamanhos. O tutorial foi reduzido e a abertura ampliada. Consulte
+`TESTE-4.8.md`. SHA-256:
+`C63453BDD6BCABEBF8EC9A3AF08FEE81A6305275C34D59EFCBC193FE12369399`.
+
 ## Testes já realizados
 
 - 456/456 verificações de geometria passaram.
@@ -97,7 +106,7 @@ certificado do APK 4.6. Main, site e Play Store permaneceram intactos.
 
 ## Teste que o usuário deve fazer no aparelho
 
-1. Instalar o APK `4.7-candidato-play-teste` obtido no artifact #34.
+1. Instalar o APK `4.8-selecao-visual-teste` do novo build.
 2. Importar PDFs reais no aplicativo.
 3. Segurar palavras curtas, longas, acentuadas e palavras muito próximas.
 4. Abrir o dicionário e conferir se ele recebeu a palavra marcada.
@@ -130,6 +139,7 @@ correções normais na branch de teste estão autorizadas.
 - `BUILD-TESTE.md`: builds Android e artifacts já conferidos.
 - `TESTE-4.6.md`: seleção contínua, zoom, quiz, sons e validação portátil.
 - `TESTE-4.7.md`: candidato atual, testes móveis simulados e build #34.
+- `TESTE-4.8.md`: correção do intervalo visual após o teste físico do APK 4.7.
 - `AUDITORIA-PLAY-STORE-4.7.md`: pendências para a futura submissão à Play Store.
 - `AUDITORIA-DICIONARIO-MASCOTE-FLUIDEZ.md`: etapa 4.5, testes, fontes do
   dicionário, licenças e opções de API.

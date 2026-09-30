@@ -1,6 +1,31 @@
 # AstraBook — continuidade técnica
 
-Atualizado em 29/09/2026. Projeto em testes: não publicar na Play Store nem atualizar site/produção sem pedido explícito do usuário. Branch atual: `teste/preparacao-play-store`.
+Atualizado em 30/09/2026. Projeto em testes: não publicar na Play Store nem atualizar site/produção sem pedido explícito do usuário. Branch atual: `teste/preparacao-play-store`.
+
+## Checkpoint 4.8 — intervalo visual independente do WebView
+
+O teste físico do APK 4.7 confirmou que a palavra individual estava correta,
+mas selecionar ou marcar várias linhas produzia fragmentos espalhados. A imagem
+de 30/09 mostrou as alças nos extremos corretos e palavras alternadas coloridas
+entre eles. A causa é o `Range` do WebView seguir a ordem interna dos elementos
+do PDF, que pode ser diferente da ordem visual.
+
+`atualizacao_i.zip` prepara `4.8-selecao-visual-teste`, versionCode `30`. O app
+agora agrupa as caixas reais por linha, ordena as palavras pela posição e usa a
+mesma lista visual para desenhar a seleção, copiar e criar o destaque. Um teste
+inverte propositalmente a ordem dos elementos antes do gesto: a seleção
+arrastada e o modo marca-texto ainda retornaram o texto completo e nove linhas
+contínuas em 900 × 900 e 390 × 844. Os 38/38 toques individuais e as demais
+verificações da 4.7 continuam aprovados.
+
+O tutorial foi reduzido ao essencial. A abertura agora dura aproximadamente
+6,9 segundos e mostra dicas a cada 2,3 segundos. A reconstrução somente pelos
+arquivos do repositório repetiu toda a bateria. Consulte `TESTE-4.8.md`.
+
+SHA-256 de `atualizacao_i.zip`:
+`C63453BDD6BCABEBF8EC9A3AF08FEE81A6305275C34D59EFCBC193FE12369399`.
+Ainda falta gerar e validar o APK 4.8 no mesmo aparelho e livro. Não publicar na
+Play Store, `main` ou site.
 
 ## Checkpoint 4.7 — candidato para avaliação e correções móveis
 
