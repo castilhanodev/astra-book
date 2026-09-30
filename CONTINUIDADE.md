@@ -191,14 +191,19 @@ Quando houver mudança de tarefa, avisar isso explicitamente e recomendar modelo
 
 ## Play Console em 30/09/2026
 
-O Play Console mostra 10 de 11 tarefas iniciais concluídas. Segurança dos dados,
-categoria `Livros e referências`, contato público e página de detalhes foram
-salvos. A única tarefa restante é a classificação indicativa da IARC. O
-formulário informa que o e-mail de contato será compartilhado com a IARC e
-autoridades de classificação; obter autorização específica antes de preencher.
-Depois, conferir a Visão geral da publicação antes de enviar o conjunto para
-revisão. A produção continua bloqueada até o teste fechado exigido pelo Console,
-com pelo menos 12 participantes durante 14 dias.
+As 11 tarefas iniciais do Play Console foram concluídas. A classificação da IARC
+ficou em 14 anos no Brasil e Livre/3 anos nas demais regiões exibidas, com
+`Compras no Aplicativo` como único elemento interativo. A faixa fechada `Alpha`
+foi configurada para o Brasil com o AAB 4.9 e a lista existente de quatro
+testadores. As 14 mudanças foram enviadas à Google Play e estavam nas
+verificações automáticas antes da revisão no último estado observado.
+
+A produção continua bloqueada até pelo menos 12 contas aceitarem participar do
+teste fechado e permanecerem nele durante 14 dias. Ainda faltam oito contas e a
+aceitação de todos os participantes. Não registrar os endereços neste
+repositório. Assim que a revisão liberar a faixa, copiar o link de participação
+do teste fechado, diferente do link do teste interno, e encaminhá-lo aos
+testadores por fora do repositório.
 
 ## Etapa 4.5 preparada
 

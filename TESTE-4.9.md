@@ -64,7 +64,7 @@ APK e no AAB coincidem com a reconstrução submetida aos testes.
 
 ## Configuração do Play Console em 30/09/2026
 
-Dez das onze tarefas iniciais do Play Console foram concluídas. Foram salvos a
+As onze tarefas iniciais do Play Console foram concluídas. Foram salvos a
 política de privacidade, o acesso para revisão sem login obrigatório, a
 declaração de ausência de anúncios, público-alvo, Segurança dos dados,
 declarações de app governamental, recursos financeiros, saúde e ID de
@@ -78,9 +78,16 @@ opcional de dados de conta e atividade quando o usuário escolhe criar uma conta
 sem compartilhamento com terceiros, com criptografia em trânsito e solicitação
 de exclusão pela página publicada no site.
 
-Falta apenas a classificação indicativa da IARC. O formulário exige um e-mail
-de contato e avisa que ele será compartilhado com a IARC e autoridades de
-classificação; por isso, aguardar autorização específica antes de preencher.
-Depois dessa etapa, revisar a Visão geral da publicação antes de enviar qualquer
-mudança à análise. A produção continua bloqueada até um teste fechado com pelo
-menos 12 participantes durante 14 dias.
+A classificação indicativa da IARC foi preenchida com autorização para usar o
+contato informado. O resultado mostra 14 anos no Brasil e Livre/3 anos nas
+demais regiões exibidas; o único elemento interativo indicado é `Compras no
+Aplicativo`, correspondente ao Astra Pro presente no pacote.
+
+A faixa fechada `Alpha` foi configurada para o Brasil com o AAB 4.9, a lista de
+quatro testadores existente e as notas `AstraBook 4.9 — teste fechado`. As 14
+mudanças foram enviadas à Google Play para as verificações automáticas e revisão.
+No último estado observado, as verificações ainda estavam em andamento. A
+produção continua bloqueada até pelo menos 12 contas aceitarem participar do
+teste fechado e permanecerem nele durante 14 dias; portanto, ainda faltam oito
+contas e a aceitação de todos os participantes. Não armazenar endereços de
+testadores neste repositório.
