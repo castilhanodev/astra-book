@@ -30,6 +30,19 @@ Antes da produção pública, ainda é preciso concluir a ficha no Play Console,
 validar o AAB assinado, configurar os produtos de assinatura e cumprir o teste
 fechado exigido pela conta, quando aplicável.
 
+## Teste interno no Google Play
+
+A versão 31 (`4.9`) foi enviada e está ativa na faixa de teste interno como
+`AstraBook 4.9 — teste interno`. A lista contém quatro contas autorizadas, sem
+armazenar os endereços neste repositório. Os testadores participam por:
+https://play.google.com/apps/internaltest/4701329264092446848 .
+
+O testador deve abrir esse link usando a mesma Conta Google cadastrada, aceitar
+a participação e usar o botão da Play Store para instalar. A faixa interna é
+adequada para validar o pacote e distribuir rapidamente aos aparelhos, mas não
+conta como o teste fechado de 12 participantes por 14 dias que o Console exige
+antes de liberar produção nesta conta.
+
 ## Build Android #36
 
 O workflow terminou com sucesso no commit `c669e7d`. Execução:

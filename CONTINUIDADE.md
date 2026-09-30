@@ -19,13 +19,18 @@ acesa, zoom, abas móveis e estante foram aprovados. Consulte `TESTE-4.9.md` e
 `PLAY-STORE-LISTAGEM.md`. SHA-256 de `atualizacao_j.zip`:
 `765AE19C7AB4E7BC655CCFCAE5EFFC000D0B5F66D77411DE12D71BA4B7C9984E`.
 
-No Play Console, o formulário de criação foi preparado com o nome
-`AstraBook: Leitor de Livros`, pacote `com.astrabook.app`, idioma pt-BR, tipo
-App e download grátis. O nome do pacote apareceu como disponível. A criação
-efetiva do app ainda depende da confirmação exigida imediatamente antes do
-envio do formulário na interface. Para o primeiro teste, manter sem anúncios;
-se anúncios forem adicionados antes da produção, atualizar o código, a política
-e Segurança dos dados antes de enviar a versão pública.
+No Play Console, o app foi cadastrado como `AstraBook: Leitor de Livros`, pacote
+`com.astrabook.app`, idioma pt-BR, tipo App e download grátis. A versão 31
+(`4.9`) está ativa na faixa de teste interno com o nome
+`AstraBook 4.9 — teste interno`. A lista tem quatro contas autorizadas; os
+endereços não são armazenados no repositório. Link de participação:
+https://play.google.com/apps/internaltest/4701329264092446848 . Cada testador
+precisa abrir o link com a mesma Conta Google cadastrada, aceitar a participação
+e então instalar pela Play Store. Este teste interno não substitui o teste
+fechado de 12 participantes por 14 dias exigido pelo Console antes da produção.
+Para o primeiro teste, manter sem anúncios; se anúncios forem adicionados antes
+da produção, atualizar o código, a política e Segurança dos dados antes de
+enviar a versão pública.
 
 O build Android #36 terminou com sucesso no commit `c669e7d`:
 https://github.com/castilhanodev/astra-book/actions/runs/36736630049 . O artifact
