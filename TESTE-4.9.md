@@ -85,8 +85,10 @@ Aplicativo`, correspondente ao Astra Pro presente no pacote.
 
 A faixa fechada `Alpha` foi configurada para o Brasil com o AAB 4.9, a lista de
 quatro testadores existente e as notas `AstraBook 4.9 — teste fechado`. As 14
-mudanças foram enviadas à Google Play para as verificações automáticas e revisão.
-No último estado observado, as verificações ainda estavam em andamento. A
+mudanças foram enviadas à Google Play. As verificações automáticas terminaram
+sem bloqueio e a versão passou ao estado `Em análise`. O link da faixa fechada é
+https://play.google.com/apps/testing/com.astrabook.app . Usá-lo apenas com as
+contas cadastradas e depois que a revisão liberar a versão. A
 produção continua bloqueada até pelo menos 12 contas aceitarem participar do
 teste fechado e permanecerem nele durante 14 dias; portanto, ainda faltam oito
 contas e a aceitação de todos os participantes. Não armazenar endereços de

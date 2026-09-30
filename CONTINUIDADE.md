@@ -195,8 +195,10 @@ As 11 tarefas iniciais do Play Console foram concluídas. A classificação da I
 ficou em 14 anos no Brasil e Livre/3 anos nas demais regiões exibidas, com
 `Compras no Aplicativo` como único elemento interativo. A faixa fechada `Alpha`
 foi configurada para o Brasil com o AAB 4.9 e a lista existente de quatro
-testadores. As 14 mudanças foram enviadas à Google Play e estavam nas
-verificações automáticas antes da revisão no último estado observado.
+testadores. As 14 mudanças foram enviadas à Google Play, passaram pelas
+verificações automáticas sem bloqueio e a versão ficou `Em análise`. O link da
+faixa fechada é https://play.google.com/apps/testing/com.astrabook.app ; usá-lo
+com as contas cadastradas depois que a revisão liberar a versão.
 
 A produção continua bloqueada até pelo menos 12 contas aceitarem participar do
 teste fechado e permanecerem nele durante 14 dias. Ainda faltam oito contas e a
