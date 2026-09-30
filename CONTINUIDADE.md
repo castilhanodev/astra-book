@@ -21,6 +21,18 @@ zoom. Consulte `TESTE-4.7.md` e `AUDITORIA-PLAY-STORE-4.7.md`.
 Esta branch é candidata a teste em aparelho. Não enviar o AAB à Play Store,
 não atualizar a main e não publicar o site antes da autorização explícita.
 
+O build Android #34 concluiu com sucesso no commit `79000b7`:
+https://github.com/castilhanodev/astra-book/actions/runs/36715644873 . Artifact:
+https://github.com/castilhanodev/astra-book/actions/runs/36715644873/artifacts/11096047690 .
+O digest do artifact foi conferido após o download:
+`F54CD7E4E795FD020EA531053218980C2FA2467F2CCD902A8336CD042252D107`.
+O APK tem SHA-256
+`FBBAFE09A85EC314E680203A49D2E7205DE8BD1FEA2076523F55E6A19C9E8ABE`;
+o AAB,
+`A76670F2998241CD238F1C8CF303CF20201E27E751DDA9869D42C5AEDDD8C561`.
+O conteúdo web empacotado coincide com a reconstrução testada, e o certificado
+de assinatura é o mesmo usado no APK 4.6. Nenhuma publicação foi realizada.
+
 ## Checkpoint 4.6 — seleção contínua, zoom, quiz e sons
 
 `atualizacao_g.zip` prepara `4.6-selecao-zoom-quiz-teste`, versionCode `28`.
@@ -101,4 +113,4 @@ Quando houver mudança de tarefa, avisar isso explicitamente e recomendar modelo
 
 O build Android #32 da versão `4.5-melhorias-teste`, versionCode `27`, foi concluído com sucesso: https://github.com/castilhanodev/astra-book/actions/runs/36575071678 . Artifact: https://github.com/castilhanodev/astra-book/actions/runs/36575071678/artifacts/11037410830 . O manifesto e os hashes do conteúdo foram conferidos; detalhes em `BUILD-TESTE.md`. O build não publicou na Play Store nem atualizou o site.
 
-Próxima etapa técnica: instalar o APK 4.7 no celular/tablet e validar seleção arrastada, zoom, quiz, sons, fluidez, fechamento das abas, estante móvel, botão Próxima e modo de avaliação, sem publicar na Play Store.
+Próxima etapa técnica: instalar o APK 4.7 no celular/tablet e validar seleção arrastada, zoom, quiz, sons, fluidez, fechamento das abas, estante móvel, botão Próxima e modo de avaliação, sem publicar na Play Store. O APK local verificado está em `outputs/AstraBook-4.7-candidato-play-teste.apk` no espaço de continuidade desta máquina; em outro computador, baixar o artifact #34.

@@ -56,8 +56,34 @@ O `npm ci` e o `npx cap sync android` concluíram. A sincronização encontrou
 somente App, Local Notifications e Play Billing; não encontrou AdMob nem o
 plugin de autenticação Google.
 
+## Build Android verificado
+
+O build manual #34 concluiu com sucesso no commit
+`79000b7983f1f292018ab4fddc694a29094ad228`:
+https://github.com/castilhanodev/astra-book/actions/runs/36715644873 .
+
+Artifact `astra-book-play-store`:
+https://github.com/castilhanodev/astra-book/actions/runs/36715644873/artifacts/11096047690 .
+SHA-256 do ZIP informado pelo GitHub e conferido depois do download:
+`F54CD7E4E795FD020EA531053218980C2FA2467F2CCD902A8336CD042252D107`.
+
+- APK: `AstraBook-4.7-candidato-play-teste.apk`, 15.427.855 bytes, SHA-256
+  `FBBAFE09A85EC314E680203A49D2E7205DE8BD1FEA2076523F55E6A19C9E8ABE`;
+- AAB: `AstraBook-4.7-candidato-play-teste.aab`, 15.203.785 bytes, SHA-256
+  `A76670F2998241CD238F1C8CF303CF20201E27E751DDA9869D42C5AEDDD8C561`.
+
+Os arquivos `index.html` e `patch.js` dentro do APK coincidem por SHA-256 com
+os arquivos reconstruídos e testados. O APK usa o esquema de assinatura v2 e o
+mesmo certificado de upload do APK 4.6; SHA-256 do certificado:
+`464FE4EFE945359566AE09683E949953FF828AC5EB96C6E840DAA0D8FD1C8284`.
+Não há plugin nativo de anúncios nem autenticação Google no pacote.
+
+O workflow exibiu avisos futuros sobre Node.js 20, `setup-java@v4` e a próxima
+imagem do `ubuntu-latest`; nenhum deles afetou este build. Devem ser tratados
+como manutenção do workflow antes que as versões antigas sejam desativadas.
+
 Ainda falta validar o APK em um Android físico antes de enviar o AAB à faixa de
-teste da Play Store.
+teste da Play Store. O build não publicou na Play Store, na `main` ou no site.
 
 ## Pacote portátil
 

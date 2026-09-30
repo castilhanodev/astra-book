@@ -17,7 +17,7 @@ Antes de alterar qualquer coisa, leia AGENTS.md, CONTINUIDADE.md,
 BUILD-TESTE.md, TESTE-4.7.md, AUDITORIA-PLAY-STORE-4.7.md e
 RETOMAR-EM-OUTRO-COMPUTADOR.md. Preserve a main, o site e a
 Play Store: o aplicativo ainda está em testes. O próximo passo é acompanhar
-o build e meus testes do APK 4.7-candidato-play-teste em um aparelho Android,
+meus testes do APK 4.7-candidato-play-teste em um aparelho Android,
 registrar os problemas que eu relatar, reproduzi-los e corrigir a branch de teste. Cuide sozinho das
 operações rotineiras no GitHub. Nunca publique senhas, tokens ou keystores.
 ```
@@ -73,6 +73,19 @@ quiz em celulares. Consulte `TESTE-4.7.md` e
 `AUDITORIA-PLAY-STORE-4.7.md`. SHA-256 do ZIP:
 `1C817A87D7D59A6CC5F5169C6D61E37E06C006A0BA82F84BF081F5FAE9B9D541`.
 
+O build #34 da etapa 4.7 passou no commit `79000b7`:
+`https://github.com/castilhanodev/astra-book/actions/runs/36715644873`.
+Artifact:
+`https://github.com/castilhanodev/astra-book/actions/runs/36715644873/artifacts/11096047690`.
+SHA-256 do ZIP conferido:
+`F54CD7E4E795FD020EA531053218980C2FA2467F2CCD902A8336CD042252D107`.
+SHA-256 do APK:
+`FBBAFE09A85EC314E680203A49D2E7205DE8BD1FEA2076523F55E6A19C9E8ABE`.
+SHA-256 do AAB:
+`A76670F2998241CD238F1C8CF303CF20201E27E751DDA9869D42C5AEDDD8C561`.
+O conteúdo empacotado coincide com a versão testada e a assinatura usa o mesmo
+certificado do APK 4.6. Main, site e Play Store permaneceram intactos.
+
 ## Testes já realizados
 
 - 456/456 verificações de geometria passaram.
@@ -84,7 +97,7 @@ quiz em celulares. Consulte `TESTE-4.7.md` e
 
 ## Teste que o usuário deve fazer no aparelho
 
-1. Instalar o APK `4.4-pdf-teste` obtido no artifact.
+1. Instalar o APK `4.7-candidato-play-teste` obtido no artifact #34.
 2. Importar PDFs reais no aplicativo.
 3. Segurar palavras curtas, longas, acentuadas e palavras muito próximas.
 4. Abrir o dicionário e conferir se ele recebeu a palavra marcada.
@@ -116,6 +129,8 @@ correções normais na branch de teste estão autorizadas.
 - `CONTINUIDADE.md`: investigação, solução, limitações e comandos de teste.
 - `BUILD-TESTE.md`: builds Android e artifacts já conferidos.
 - `TESTE-4.6.md`: seleção contínua, zoom, quiz, sons e validação portátil.
+- `TESTE-4.7.md`: candidato atual, testes móveis simulados e build #34.
+- `AUDITORIA-PLAY-STORE-4.7.md`: pendências para a futura submissão à Play Store.
 - `AUDITORIA-DICIONARIO-MASCOTE-FLUIDEZ.md`: etapa 4.5, testes, fontes do
   dicionário, licenças e opções de API.
 - `AGENTS.md`: regras permanentes de continuidade e preferências do usuário.
