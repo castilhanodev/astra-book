@@ -1,6 +1,31 @@
 # AstraBook — continuidade técnica
 
-Atualizado em 30/09/2026. Projeto em testes: não publicar na Play Store nem atualizar site/produção sem pedido explícito do usuário. Branch atual: `teste/preparacao-play-store`.
+Atualizado em 30/09/2026. O usuário autorizou preparar e enviar o aplicativo ao
+Google Play. Começar por uma faixa de teste, preencher a ficha e as declarações
+e só promover para produção depois de cumprir os requisitos indicados pelo
+Console. Branch atual: `teste/preparacao-play-store`.
+
+## Checkpoint 4.9 — candidato para o Google Play
+
+`atualizacao_j.zip` prepara a versão `4.9`, versionCode `31`, pacote
+`com.astrabook.app`. O cadastro por e-mail foi corrigido. O direito ao Astra Pro
+não é mais enviado ao Firestore nem aceito de um campo gravável pelo usuário;
+ele depende do Google Play Billing. A política e a exclusão de conta foram
+alinhadas ao login por e-mail, atualmente o único login em nuvem disponível.
+
+A bateria repetiu 38/38 seleções e todos os casos extras em 900 x 900 e
+390 x 844. Sintaxe, modo de avaliação, ausência de anúncios, quiz, sons, tela
+acesa, zoom, abas móveis e estante foram aprovados. Consulte `TESTE-4.9.md` e
+`PLAY-STORE-LISTAGEM.md`. SHA-256 de `atualizacao_j.zip`:
+`765AE19C7AB4E7BC655CCFCAE5EFFC000D0B5F66D77411DE12D71BA4B7C9984E`.
+
+No Play Console, o formulário de criação foi preparado com o nome
+`AstraBook: Leitor de Livros`, pacote `com.astrabook.app`, idioma pt-BR, tipo
+App e download grátis. O nome do pacote apareceu como disponível. A criação
+efetiva do app ainda depende da confirmação exigida imediatamente antes do
+envio do formulário na interface. Para o primeiro teste, manter sem anúncios;
+se anúncios forem adicionados antes da produção, atualizar o código, a política
+e Segurança dos dados antes de enviar a versão pública.
 
 ## Checkpoint 4.8 — intervalo visual independente do WebView
 
