@@ -189,6 +189,17 @@ Economia: GPT-5.6 Sol Médio para a continuidade normal; Luna Médio para tarefa
 
 Quando houver mudança de tarefa, avisar isso explicitamente e recomendar modelo/esforço antes de começar. Se a configuração atual servir, continuar; se recomendar troca, parar até o usuário confirmar.
 
+## Play Console em 30/09/2026
+
+O Play Console mostra 10 de 11 tarefas iniciais concluídas. Segurança dos dados,
+categoria `Livros e referências`, contato público e página de detalhes foram
+salvos. A única tarefa restante é a classificação indicativa da IARC. O
+formulário informa que o e-mail de contato será compartilhado com a IARC e
+autoridades de classificação; obter autorização específica antes de preencher.
+Depois, conferir a Visão geral da publicação antes de enviar o conjunto para
+revisão. A produção continua bloqueada até o teste fechado exigido pelo Console,
+com pelo menos 12 participantes durante 14 dias.
+
 ## Etapa 4.5 preparada
 
 `atualizacao_f.zip` melhora a honestidade e a qualidade do dicionário local, usa as poses transparentes existentes do mascote em novas reações e reduz trabalho gráfico desnecessário durante a virada de página. Leia `AUDITORIA-DICIONARIO-MASCOTE-FLUIDEZ.md` para a implementação, testes, limitações, licenças e comparação de APIs. SHA-256 do ZIP: `B03B7954B2803159B6900A783E399D9B208EA9BEF36AEAEE87607F830C89A4A8`.

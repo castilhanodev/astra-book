@@ -61,3 +61,26 @@ https://github.com/castilhanodev/astra-book/actions/runs/36736630049 .
 
 Os hashes de `index.html`, `patch.js`, `firebase.js` e `firebase-config.js` no
 APK e no AAB coincidem com a reconstrução submetida aos testes.
+
+## Configuração do Play Console em 30/09/2026
+
+Dez das onze tarefas iniciais do Play Console foram concluídas. Foram salvos a
+política de privacidade, o acesso para revisão sem login obrigatório, a
+declaração de ausência de anúncios, público-alvo, Segurança dos dados,
+declarações de app governamental, recursos financeiros, saúde e ID de
+publicidade, além da categoria `Livros e referências`, contato público e a
+página de detalhes do app.
+
+A página usa o nome `AstraBook: Leitor de Livros`, cinco imagens de telefone,
+ícone e recurso gráfico. Os recursos visuais foram declarados como criados ou
+editados com auxílio de IA. A declaração de Segurança dos dados informa coleta
+opcional de dados de conta e atividade quando o usuário escolhe criar uma conta,
+sem compartilhamento com terceiros, com criptografia em trânsito e solicitação
+de exclusão pela página publicada no site.
+
+Falta apenas a classificação indicativa da IARC. O formulário exige um e-mail
+de contato e avisa que ele será compartilhado com a IARC e autoridades de
+classificação; por isso, aguardar autorização específica antes de preencher.
+Depois dessa etapa, revisar a Visão geral da publicação antes de enviar qualquer
+mudança à análise. A produção continua bloqueada até um teste fechado com pelo
+menos 12 participantes durante 14 dias.
