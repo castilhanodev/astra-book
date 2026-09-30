@@ -27,6 +27,21 @@ envio do formulário na interface. Para o primeiro teste, manter sem anúncios;
 se anúncios forem adicionados antes da produção, atualizar o código, a política
 e Segurança dos dados antes de enviar a versão pública.
 
+O build Android #36 terminou com sucesso no commit `c669e7d`:
+https://github.com/castilhanodev/astra-book/actions/runs/36736630049 . O artifact
+`astra-book-play-store` tem SHA-256
+`E006D35E203167ED007FFDF1639EAC4BF57F94294ED8ADBCB77FB213FC6F9509`.
+O APK tem SHA-256
+`AA79803163A5ADC85EE2596DE068F7F153CDAF18138A9BE0A79450D8E0C7658D` e o AAB,
+`88693320F63962E5B7FDEB4B08C5E7BBE38BB4112EBB90B19766C5F073876B06`.
+Manifesto, certificado de upload e conteúdo web empacotado foram conferidos;
+detalhes em `TESTE-4.9.md`.
+
+Os materiais revisados da ficha estão em `play-store/v2/`. Eles usam as telas
+reais de estante, dicionário e progresso. Capas e títulos comerciais foram
+substituídos por exemplos fictícios, e o texto do livro atrás do dicionário foi
+desfocado. A imagem de destaque e três capturas estão prontas para o Console.
+
 ## Checkpoint 4.8 — intervalo visual independente do WebView
 
 O teste físico do APK 4.7 confirmou que a palavra individual estava correta,

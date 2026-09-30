@@ -29,3 +29,22 @@ Versão Android `4.9`, `versionCode 31`, pacote `com.astrabook.app`.
 Antes da produção pública, ainda é preciso concluir a ficha no Play Console,
 validar o AAB assinado, configurar os produtos de assinatura e cumprir o teste
 fechado exigido pela conta, quando aplicável.
+
+## Build Android #36
+
+O workflow terminou com sucesso no commit `c669e7d`. Execução:
+https://github.com/castilhanodev/astra-book/actions/runs/36736630049 .
+
+- Artifact `astra-book-play-store`: SHA-256
+  `E006D35E203167ED007FFDF1639EAC4BF57F94294ED8ADBCB77FB213FC6F9509`.
+- APK: SHA-256
+  `AA79803163A5ADC85EE2596DE068F7F153CDAF18138A9BE0A79450D8E0C7658D`.
+- AAB: SHA-256
+  `88693320F63962E5B7FDEB4B08C5E7BBE38BB4112EBB90B19766C5F073876B06`.
+- Manifesto do APK: pacote `com.astrabook.app`, `versionCode 31`,
+  `versionName 4.9`, `minSdk 24` e `targetSdk 36`.
+- Certificado de upload SHA-256:
+  `464FE4EFE945359566AE09683E949953FF828AC5EB96C6E840DAA0D8FD1C8284`.
+
+Os hashes de `index.html`, `patch.js`, `firebase.js` e `firebase-config.js` no
+APK e no AAB coincidem com a reconstrução submetida aos testes.

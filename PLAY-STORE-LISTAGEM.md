@@ -80,8 +80,17 @@ conteúdos gerados pelo usuário e Identificadores do dispositivo ou outros.
 ## Recursos gráficos existentes
 
 - Ícone: `store/icone-512.png`
-- Imagem de destaque: `store/imagem-destaque-1024x500.png`
-- Capturas de telefone: `store/capturas/*.png`
+- Imagem de destaque revisada: `play-store/v2/imagem-destaque-1024x500-v2.png`
+- Captura — estante real: `play-store/v2/01-estante-personalizada.png`
+- Captura — dicionário real: `play-store/v2/02-dicionario-no-texto.png`
+- Captura — progresso real: `play-store/v2/03-progresso-e-conquistas.png`
+- Capturas anteriores adicionais: `store/capturas/*.png`
 - Política: `https://castilhanodev.github.io/astra-book/privacidade.html`
 - Exclusão de conta: `https://castilhanodev.github.io/astra-book/excluir-conta.html`
+
+As três capturas revisadas mostram telas e funções existentes no aplicativo.
+Na estante, somente capas e títulos comerciais foram substituídos por exemplos
+fictícios da Astra Book. No dicionário, o texto do livro ao fundo foi desfocado,
+mas o painel exibido é o painel real do app. O fundo espacial usado na moldura
+foi criado especificamente para esta ficha.
 
