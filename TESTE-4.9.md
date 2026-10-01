@@ -1,5 +1,16 @@
 # AstraBook 4.9 — candidato para o Google Play
 
+## Atualização de testadores em 01/10/2026
+
+A versão 4.9 da Alpha está ativa. Uma lista adicional com 7 contas válidas foi
+criada, selecionada na faixa e enviada à revisão do Google Play. As duas listas
+somam 11 contas cadastradas, mas cadastro não equivale à adesão ao teste. Um
+endereço fornecido pelo usuário foi recusado pelo Console como inexistente e
+não foi incluído. A alteração está em análise na Visão geral da publicação.
+Após aprovação, conferir no painel quantas pessoas aceitaram o teste pelo link
+https://play.google.com/apps/testing/com.astrabook.app . Contas já inscritas no
+teste interno precisam sair dele antes de aderir ao teste fechado.
+
 Versão Android `4.9`, `versionCode 31`, pacote `com.astrabook.app`.
 
 ## Correções finais
@@ -88,8 +99,7 @@ quatro testadores existente e as notas `AstraBook 4.9 — teste fechado`. As 14
 mudanças foram enviadas à Google Play. As verificações automáticas terminaram
 sem bloqueio e a versão passou ao estado `Em análise`. O link da faixa fechada é
 https://play.google.com/apps/testing/com.astrabook.app . Usá-lo apenas com as
-contas cadastradas e depois que a revisão liberar a versão. A
+contas cadastradas. A
 produção continua bloqueada até pelo menos 12 contas aceitarem participar do
-teste fechado e permanecerem nele durante 14 dias; portanto, ainda faltam oito
-contas e a aceitação de todos os participantes. Não armazenar endereços de
+teste fechado e permanecerem nele durante 14 dias. Não armazenar endereços de
 testadores neste repositório.

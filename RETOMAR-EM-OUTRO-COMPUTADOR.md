@@ -5,6 +5,16 @@ estado compartilhável do projeto sem depender da conversa, dos Downloads ou de
 caminhos locais deste computador. Não coloque e-mails de testadores, senhas,
 tokens, chaves privadas nem o conteúdo do keystore neste arquivo ou no GitHub.
 
+## Atualização de 01/10/2026
+
+A versão 4.9 do teste fechado Alpha está ativa. Sete novos endereços válidos
+foram incluídos em uma lista adicional da Alpha; a mudança foi enviada ao
+Google Play e está em análise. As duas listas selecionadas somam 11 contas
+cadastradas, mas a quantidade de participantes que aceitaram o teste deve ser
+conferida no painel. Um endereço fornecido foi recusado como inexistente e não
+foi incluído. Contas inscritas no teste interno precisam sair dele antes de
+aderir à Alpha. Os endereços permanecem fora do repositório.
+
 ## Texto para colar no novo chat
 
 Copie o bloco inteiro abaixo e envie ao Codex no outro computador:
@@ -33,11 +43,10 @@ Estado atual:
 - atualização mais recente atualizacao_j.zip;
 - build Android verificado no GitHub Actions, execução 36736630049;
 - a versão 4.9 está ativa no teste interno;
-- a faixa fechada Alpha foi configurada para o Brasil e enviada à revisão do
-  Google Play;
-- no último estado observado, as verificações automáticas terminaram sem
-  bloqueio e a versão estava Em análise;
-- link futuro do teste fechado:
+- a faixa fechada Alpha está ativa no Brasil com a versão 4.9;
+- em 01/10/2026, uma lista adicional com 7 contas foi enviada para revisão;
+- no último estado observado, a inclusão das contas estava em análise;
+- link do teste fechado:
   https://play.google.com/apps/testing/com.astrabook.app;
 - a produção pública ainda não está autorizada e continua bloqueada pelo
   requisito de 12 testadores no teste fechado durante 14 dias.
@@ -64,12 +73,11 @@ Play Console:
 - exclusão de conta:
   https://castilhanodev.github.io/astra-book/excluir-conta.html
 
-Ao retomar o Play Console, primeiro verifique o status da revisão. Não envie
-produção. Quando o usuário fornecer a lista final de contas de teste e autorizar
-a inclusão, adicione-as à lista selecionada da faixa Alpha sem registrar os
-endereços no repositório. São necessários pelo menos 12 participantes que
-aceitem o teste fechado e permaneçam por 14 dias. A contagem só vale depois da
-aceitação dos participantes. O teste interno não conta para esse requisito.
+Ao retomar o Play Console, verifique se a inclusão da lista adicional já foi
+aprovada. Não envie produção. Quando o usuário fornecer novas contas de teste,
+adicione-as à faixa Alpha sem registrar os endereços no repositório. São
+necessários pelo menos 12 participantes que aceitem o teste fechado e
+permaneçam por 14 dias. O teste interno não conta para esse requisito.
 
 Código e builds:
 - reconstitua o projeto com python preparar_projeto.py --testes;
@@ -143,17 +151,17 @@ registrado.
 - APK verificado: SHA-256
   `AA79803163A5ADC85EE2596DE068F7F153CDAF18138A9BE0A79450D8E0C7658D`.
 - Teste interno: ativo com quatro contas cadastradas.
-- Teste fechado Alpha: Brasil, AAB 4.9, em análise no último estado observado.
+- Teste fechado Alpha: Brasil, AAB 4.9, ativo; a nova lista de 7 contas está
+  em análise no último estado observado.
 - Classificação IARC: 14 anos no Brasil e Livre/3 anos nas demais regiões
   exibidas; `Compras no Aplicativo` é o único elemento interativo indicado.
 - Todas as 11 tarefas iniciais da ficha do Play Console foram concluídas.
 - As 14 mudanças da ficha e da faixa fechada foram enviadas à revisão.
 
-Dois endereços adicionais foram fornecidos no chat do computador anterior, mas
-não foram enviados à lista porque o usuário ainda estava reunindo os demais.
-Por privacidade, eles não estão neste repositório. No novo chat, peça ao usuário
-que forneça novamente a lista completa e diga explicitamente quando pode ser
-adicionada ao Play Console.
+Os endereços de testadores não estão neste repositório. Um endereço foi recusado
+como inexistente; confirme a grafia com o usuário antes de tentar novamente.
+Antes de avaliar o requisito de produção, confira quantas pessoas efetivamente
+aceitaram participar da Alpha.
 
 ## Comandos seguros de retomada
 

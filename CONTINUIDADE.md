@@ -1,5 +1,17 @@
 # AstraBook — continuidade técnica
 
+## Checkpoint 01/10/2026 — testadores Alpha
+
+A versão 4.9 do teste fechado Alpha está ativa. Sete contas válidas foram
+adicionadas em uma nova lista selecionada para a Alpha; a mudança foi enviada
+ao Google Play e está em análise. As duas listas selecionadas somam 11 contas
+cadastradas. Um endereço fornecido foi recusado como inexistente. Não há
+endereços de testadores no repositório. Cadastro não equivale a adesão: conferir
+no painel quantas pessoas aceitaram o teste pelo link
+https://play.google.com/apps/testing/com.astrabook.app . São necessárias 12
+adesões contínuas por 14 dias antes de solicitar produção. Contas já inscritas
+no teste interno precisam sair dele para entrar no teste fechado.
+
 Atualizado em 30/09/2026. O usuário autorizou preparar e enviar o aplicativo ao
 Google Play. Começar por uma faixa de teste, preencher a ficha e as declarações
 e só promover para produção depois de cumprir os requisitos indicados pelo
