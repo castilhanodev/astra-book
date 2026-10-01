@@ -4,7 +4,7 @@
 
 A versão 4.9 da Alpha está ativa. A lista adicional foi publicada e recebeu um
 endereço corrigido pelo usuário, aceito pelo Console. Uma conta adicional foi
-incluída em seguida. As duas listas somam 14
+incluída em seguida. As duas listas somam 15
 contas cadastradas, mas cadastro não equivale à adesão ao teste. Conferir no
 painel quantas pessoas aceitaram o teste pelo link
 https://play.google.com/apps/testing/com.astrabook.app . Contas já inscritas no

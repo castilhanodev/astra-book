@@ -4,7 +4,7 @@
 
 A versão 4.9 do teste fechado Alpha está ativa. A lista adicional foi publicada
 e recebeu uma conta corrigida pelo usuário, aceita pelo Console. As duas listas
-selecionadas somam 14 contas cadastradas após outras inclusões. Não há endereços de testadores no
+selecionadas somam 15 contas cadastradas após outras inclusões. Não há endereços de testadores no
 repositório. Cadastro não equivale a adesão: conferir
 no painel quantas pessoas aceitaram o teste pelo link
 https://play.google.com/apps/testing/com.astrabook.app . São necessárias 12
