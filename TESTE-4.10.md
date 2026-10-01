@@ -44,3 +44,8 @@ enviada explicitamente à faixa Alpha. A atualização pelo Google Play, mantend
 o mesmo identificador e assinatura do app, normalmente preserva os dados
 locais; limpar dados ou desinstalar pode apagar livros importados que não
 estejam armazenados na nuvem.
+
+O GitHub Actions concluiu o build assinado de teste no commit `453f634`:
+https://github.com/castilhanodev/astra-book/actions/runs/36909245022 .
+O artifact `astra-book-play-store` contém APK e AAB da versão 4.10. Ele ainda
+não foi distribuído pela Play Store.
