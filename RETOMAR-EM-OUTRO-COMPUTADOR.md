@@ -7,6 +7,10 @@ tokens, chaves privadas nem o conteúdo do keystore neste arquivo ou no GitHub.
 
 ## Atualização de 01/10/2026
 
+A branch `teste/correcao-login` contém o candidato 4.10 para resolver relatos
+de cadastro e entrada que não abrem o perfil. Leia `TESTE-4.10.md`. Esta versão
+ainda não foi enviada à Play Store; a Alpha instalada continua em 4.9.
+
 A versão 4.9 do teste fechado Alpha está ativa. A lista adicional foi publicada
 e recebeu a correção de um endereço recusado anteriormente. As duas listas
 selecionadas somam 15 contas cadastradas, mas a quantidade de participantes que
