@@ -13,7 +13,7 @@ ainda não foi enviada à Play Store; a Alpha instalada continua em 4.9.
 
 A versão 4.9 do teste fechado Alpha está ativa. A lista adicional foi publicada
 e recebeu a correção de um endereço recusado anteriormente. As duas listas
-selecionadas somam 15 contas cadastradas, mas a quantidade de participantes que
+selecionadas somam 16 contas cadastradas, mas a quantidade de participantes que
 aceitaram o teste deve ser conferida no painel. Contas inscritas no teste
 interno precisam sair dele antes de aderir à Alpha. Os endereços permanecem
 fora do repositório.
@@ -48,7 +48,7 @@ Estado atual:
 - a versão 4.9 está ativa no teste interno;
 - a faixa fechada Alpha está ativa no Brasil com a versão 4.9;
 - em 01/10/2026, a lista adicional da Alpha foi publicada e atualizada para
-  11 contas; as duas listas selecionadas somam 15 contas cadastradas;
+  12 contas; as duas listas selecionadas somam 16 contas cadastradas;
 - link do teste fechado:
   https://play.google.com/apps/testing/com.astrabook.app;
 - a produção pública ainda não está autorizada e continua bloqueada pelo
@@ -154,7 +154,7 @@ registrado.
 - APK verificado: SHA-256
   `AA79803163A5ADC85EE2596DE068F7F153CDAF18138A9BE0A79450D8E0C7658D`.
 - Teste interno: ativo com quatro contas cadastradas.
-- Teste fechado Alpha: Brasil, AAB 4.9, ativo; as listas selecionadas somam 15
+- Teste fechado Alpha: Brasil, AAB 4.9, ativo; as listas selecionadas somam 16
   contas cadastradas no último estado observado.
 - Classificação IARC: 14 anos no Brasil e Livre/3 anos nas demais regiões
   exibidas; `Compras no Aplicativo` é o único elemento interativo indicado.
