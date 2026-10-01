@@ -2,11 +2,10 @@
 
 ## Checkpoint 01/10/2026 — testadores Alpha
 
-A versão 4.9 do teste fechado Alpha está ativa. Sete contas válidas foram
-adicionadas em uma nova lista selecionada para a Alpha; a mudança foi enviada
-ao Google Play e está em análise. As duas listas selecionadas somam 11 contas
-cadastradas. Um endereço fornecido foi recusado como inexistente. Não há
-endereços de testadores no repositório. Cadastro não equivale a adesão: conferir
+A versão 4.9 do teste fechado Alpha está ativa. A lista adicional foi publicada
+e recebeu uma conta corrigida pelo usuário, aceita pelo Console. As duas listas
+selecionadas somam 12 contas cadastradas. Não há endereços de testadores no
+repositório. Cadastro não equivale a adesão: conferir
 no painel quantas pessoas aceitaram o teste pelo link
 https://play.google.com/apps/testing/com.astrabook.app . São necessárias 12
 adesões contínuas por 14 dias antes de solicitar produção. Contas já inscritas

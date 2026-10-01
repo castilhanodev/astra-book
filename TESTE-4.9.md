@@ -2,12 +2,10 @@
 
 ## Atualização de testadores em 01/10/2026
 
-A versão 4.9 da Alpha está ativa. Uma lista adicional com 7 contas válidas foi
-criada, selecionada na faixa e enviada à revisão do Google Play. As duas listas
-somam 11 contas cadastradas, mas cadastro não equivale à adesão ao teste. Um
-endereço fornecido pelo usuário foi recusado pelo Console como inexistente e
-não foi incluído. A alteração está em análise na Visão geral da publicação.
-Após aprovação, conferir no painel quantas pessoas aceitaram o teste pelo link
+A versão 4.9 da Alpha está ativa. A lista adicional foi publicada e recebeu um
+endereço corrigido pelo usuário, aceito pelo Console. As duas listas somam 12
+contas cadastradas, mas cadastro não equivale à adesão ao teste. Conferir no
+painel quantas pessoas aceitaram o teste pelo link
 https://play.google.com/apps/testing/com.astrabook.app . Contas já inscritas no
 teste interno precisam sair dele antes de aderir ao teste fechado.
 
