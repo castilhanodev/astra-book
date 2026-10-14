@@ -8,6 +8,9 @@ o APK 4.9 da Alpha, ativar anúncios ou iniciar cobranças.
 - O Play Console ainda pede **criar perfil para pagamentos/conta do comerciante**.
   Por isso, a página de assinaturas está indisponível. A criação exige os dados
   legais e financeiros corretos do titular; não guardar esses dados no GitHub.
+  Ao abrir o fluxo, o Google ofereceu um perfil pessoal preexistente e a opção
+  de criar outro. Nenhum foi selecionado ou vinculado. Confirmar o titular legal
+  e os dados desse perfil antes de associá-lo à conta de desenvolvedor.
 - O download do app foi definido como grátis. A receita planejada é uma
   assinatura opcional para recursos digitais, não uma taxa pelo download.
 - A versão de teste está sem anúncios ativos. O projeto reconstruído ainda

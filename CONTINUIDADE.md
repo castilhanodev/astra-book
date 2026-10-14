@@ -3,8 +3,10 @@
 ## Checkpoint 14/10/2026 — monetização
 
 O Play Console ainda não tem perfil para pagamentos; assinaturas estão
-bloqueadas. Foi criada a auditoria e sequência de preparação em
-`MONETIZACAO-PRE-LANCAMENTO.md`. O app Alpha 4.9 não foi alterado: continua
+bloqueadas. O fluxo ofereceu um perfil pessoal preexistente, mas não houve
+seleção ou vinculação sem confirmar o titular legal. A auditoria e sequência
+de preparação estão em `MONETIZACAO-PRE-LANCAMENTO.md`. O app Alpha 4.9 não
+foi alterado: continua
 sem anúncios ativos e sem cobrança. Antes de vendas reais, validar os
 produtos/planos-base, os testes de licença e a verificação do direito Pro no
 servidor. AdMob fica para uma versão posterior se não estiver pronto na
