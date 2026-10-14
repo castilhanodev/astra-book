@@ -5,6 +5,10 @@ estado compartilhável do projeto sem depender da conversa, dos Downloads ou de
 caminhos locais deste computador. Não coloque e-mails de testadores, senhas,
 tokens, chaves privadas nem o conteúdo do keystore neste arquivo ou no GitHub.
 
+Preparação de monetização em `MONETIZACAO-PRE-LANCAMENTO.md` (14/10/2026):
+perfil para pagamentos ainda ausente; assinaturas bloqueadas no Console;
+nenhum anúncio ou cobrança foi ativado. Ler antes de trabalhar nos planos.
+
 ## Atualização de 01/10/2026
 
 A branch `teste/correcao-login` contém o candidato 4.10 para resolver relatos
