@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Astra Book</string>
+    <string name="title_activity_main">Astra Book</string>
+    <string name="package_name">com.astrabook.app</string>
+    <string name="custom_url_scheme">com.astrabook.app</string>
+    <string name="admob_app_id">ca-app-pub-6634688733878955~6351948984</string>
+</resources>
