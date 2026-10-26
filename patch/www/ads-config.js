@@ -4,5 +4,7 @@ window.ASTRA_ADS = Object.freeze({
   enabled: true,
   interstitial: "ca-app-pub-6634688733878955/2663899694",
   rewarded: "ca-app-pub-6634688733878955/4903135946",
-  test: false
+  // Versao de teste: anuncios de demonstracao. Alterar apenas apos validar
+  // a integracao e aprovar a distribuicao em producao.
+  test: true
 });
