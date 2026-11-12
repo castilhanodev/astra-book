@@ -1,5 +1,5 @@
-/* Remendo 4.2 - a camada de toque do PDF passa a ser montada a partir das letras
-   que foram realmente desenhadas na pagina.
+/* Remendo 4.4 - a camada de toque do PDF e montada a partir das letras que foram
+   realmente desenhadas na pagina, e e REFEITA sempre que a pagina muda de tamanho.
 
    O problema: por cima da imagem do PDF existe uma camada de texto invisivel, e e
    ela que responde ao toque. Quem monta essa camada calcula a largura de cada
@@ -11,7 +11,16 @@
 
    A solucao: enquanto a pagina e desenhada, anotamos onde cada letra foi parar.
    Depois montamos a camada invisivel palavra por palavra, em cima dessas posicoes.
-   Assim a camada nao depende mais de medir fonte nenhuma. */
+   Assim a camada nao depende mais de medir fonte nenhuma.
+
+   O que faltava na 4.2: quando a pessoa dava zoom, o app redesenhava a pagina numa
+   imagem maior e trocava o canvas, mas a camada de toque ficava marcada como
+   "ja arrumada" e nunca mais era refeita. As medidas guardadas eram do desenho
+   antigo, o erro voltava e o toque caia de novo na palavra anterior. Agora a camada
+   guarda a assinatura do desenho em que foi montada (tamanho da imagem, tamanho na
+   tela e qual canvas) e se refaz sozinha assim que qualquer um deles muda: no
+   intervalo, quando o canvas muda de tamanho e, principalmente, no instante em que
+   o dedo encosta na tela, antes de a pessoa terminar de segurar a palavra. */
 (function(){
   var L=window.pdfjsLib;
   if(!L||!L.renderTextLayer||window.__astraRemendo||typeof Proxy!=='function')return;
@@ -69,7 +78,7 @@
 
   /* ---------- 3. montar a camada invisivel em cima dessas posicoes ---------- */
   function montar(tl,linhas,fator){
-    var frag=document.createDocumentFragment(),caixas=[];
+    var frag=document.createDocumentFragment(),caixas=[],cx=[];
     for(var k=0;k<linhas.length;k++){
       var ln=linhas[k],alt=ln.alt*fator;
       var esq=ln.ps[0].ini*fator, topo=(ln.y*fator)-alt*0.8;
@@ -84,6 +93,14 @@
         el.textContent=w.t+(prox?' ':'');
         sp.appendChild(el);
         caixas.push([el,Math.max(1,fim-ini)]);
+        /* a caixa que responde ao toque fica guardada em pixels DO DESENHO da pagina,
+           nao da camada invisivel. Na hora do toque ela e convertida usando a posicao
+           e o tamanho que a imagem tem na tela naquele instante. Assim, se a camada
+           estiver deslocada, o toque continua certo: quem manda e a imagem que a
+           pessoa esta vendo.
+           A caixa vai so ate o fim das letras, nao ate o comeco da proxima palavra,
+           entao o espaco entre duas nao pertence a da esquerda. */
+        cx.push({el:el,gx:w.ini,gw:Math.max(1,w.fim-w.ini),gy:ln.y-ln.alt*0.8,gh:Math.max(2,ln.alt)});
       }
       frag.appendChild(sp);
     }
@@ -93,13 +110,147 @@
     var reais=caixas.map(function(c){return c[0].getBoundingClientRect().width});
     var amp=(tl.getBoundingClientRect().width||1)/(tl.offsetWidth||1);
     for(var i=0;i<caixas.length;i++){
-      var alvo=caixas[i][1],real=reais[i]/(amp||1);
-      if(!(real>0.3))continue;
-      var f=alvo/real;
-      if(!isFinite(f)||f<=0.05||f>20)continue;
-      if(Math.abs(f-1)>0.01)caixas[i][0].style.transform='scaleX('+f.toFixed(4)+')';
+      var el=caixas[i][0],alvo=caixas[i][1],real=reais[i]/(amp||1);
+      var f=(real>0.3)?(alvo/real):1;
+      if(!isFinite(f)||f<=0.05||f>20)f=1;
+      /* a largura e escrita como alvo/f: depois do scaleX(f) a caixa mede exatamente
+         "alvo", que e a largura tirada das letras desenhadas. Assim a area que responde
+         ao toque nao depende de medir fonte nenhuma, mesmo que a medida do texto erre. */
+      el.style.width=(alvo/f).toFixed(2)+'px';
+      if(Math.abs(f-1)>0.002)el.style.transform='scaleX('+f.toFixed(4)+')';
     }
+    tl.__caixas=cx;
+    try{var cvv=canvasDe(tl);tl.__cvRef=cvv;tl.__cvW=cvv?cvv.width:0}catch(e){}
+    /* a nossa camada ja nasce nas coordenadas certas: um ajuste de escala por cima
+       dela so deslocaria tudo */
+    try{tl.style.transform='';tl.dataset.fit='letras'}catch(e){}
+    try{window.__astraRefeitas=(window.__astraRefeitas||0)+1;window.__astraQuando=Date.now()}catch(e){}
     tl.dataset.astra='letras';
+    marcar(tl);
+  }
+
+  /* ---------- a palavra que esta debaixo do dedo, pelas letras desenhadas ----------
+     Nao pergunta ao navegador qual elemento esta no ponto nem mede fonte nenhuma:
+     usa as caixas tiradas do desenho da pagina, convertidas para a tela no instante
+     do toque. Por isso vale com zoom, com a pagina rolada e depois de redesenhar. */
+  function camadaEm(x,y){
+    var el=null;try{el=document.elementFromPoint(x,y)}catch(e){}
+    var pg=el&&el.closest?el.closest('.pg,.page'):null;
+    var tl=pg?pg.querySelector('.textLayer'):null;
+    if(tl)return tl;
+    var ts=document.querySelectorAll('.textLayer');
+    for(var i=ts.length-1;i>=0;i--){
+      var r=ts[i].getBoundingClientRect();
+      if(r.width>1&&x>=r.left&&x<=r.right&&y>=r.top&&y<=r.bottom)return ts[i];
+    }
+    return null;
+  }
+  function alvoEm(x,y){
+    try{
+      var tl=camadaEm(x,y);if(!tl)return null;
+      var cs=tl.__caixas;if(!cs||!cs.length)return null;
+      var cv=tl.__cvRef||canvasDe(tl);if(!cv||!cv.width)return null;
+      /* posicao e tamanho da IMAGEM na tela, medidos agora */
+      var r=cv.getBoundingClientRect();
+      var k=r.width/cv.width;if(!(k>0))return null;
+      var lx=(x-r.left)/k, ly=(y-r.top)/k;     // ponto em pixels do desenho
+      var melhor=null,md=Infinity;
+      for(var i=0;i<cs.length;i++){
+        var c=cs[i];if(!c.el||!c.el.isConnected)continue;
+        if(lx>=c.gx&&lx<=c.gx+c.gw&&ly>=c.gy&&ly<=c.gy+c.gh){try{window.__ultimoAlvo={t:Date.now(),x:x,y:y,p:(c.el.textContent||'').trim(),dentro:true}}catch(e){}return c.el}
+        var dx=lx<c.gx?c.gx-lx:(lx>c.gx+c.gw?lx-(c.gx+c.gw):0);
+        var dy=ly<c.gy?c.gy-ly:(ly>c.gy+c.gh?ly-(c.gy+c.gh):0);
+        var d=dx+dy*3;if(d<md){md=d;melhor=c.el}
+      }
+      try{window.__ultimoAlvo={t:Date.now(),x:x,y:y,p:(melhor&&melhor.textContent||'').trim(),dentro:false,dist:Math.round(md)}}catch(e){}
+      /* dentro da pagina, responde sempre a palavra mais perto. O caminho antigo,
+         quando nao achava nada, procurava primeiro para a ESQUERDA, e por isso caia
+         na palavra anterior. Aqui nao existe esse lado preferido. */
+      var dentroDaPagina=(x>=r.left-4&&x<=r.right+4&&y>=r.top-4&&y<=r.bottom+4);
+      return (dentroDaPagina||md*k<=36)?melhor:null;
+    }catch(e){return null}
+  }
+
+  /* assinatura do desenho: muda quando o app redesenha a pagina em outro tamanho */
+  function canvasDe(tl){var pai=tl&&tl.parentElement;return pai?pai.querySelector('canvas'):null}
+  function assinatura(tl){
+    var cv=canvasDe(tl);if(!cv)return null;
+    return cv.width+'x'+cv.height+'|'+cv.offsetWidth+'x'+cv.offsetHeight+'|'+tl.offsetWidth;
+  }
+  function marcar(tl){try{tl.__cv=canvasDe(tl);tl.__sig=assinatura(tl)}catch(e){}}
+  function vencida(tl){
+    try{
+      if(!tl||!tl.isConnected)return false;
+      var cv=canvasDe(tl);if(!cv)return false;
+      var l=MAPA.get(cv);if(!l||!l.length)return false;
+      if(tl.dataset.astra!=='letras')return true;      // nunca foi montada
+      if(tl.__cv!==cv)return true;                     // o app trocou o canvas
+      return tl.__sig!==assinatura(tl);                // mudou de tamanho
+    }catch(e){return false}
+  }
+  /* refaz a camada se ela estiver vencida. e o coracao do "sempre mapeando".
+     Nunca durante um toque: trocar os elementos no meio do gesto tira o chao da
+     selecao que esta comecando e o dicionario abre vazio. */
+  var dedo=false;
+  /* tambem nao refaz enquanto existe uma selecao viva na tela: o app ainda esta
+     lendo o trecho selecionado, e trocar os elementos embaixo dele perde a palavra */
+  function ocupado(){
+    try{
+      if(document.getElementById('selbar'))return true;
+      var s=window.getSelection&&window.getSelection();
+      if(s&&s.rangeCount&&!s.isCollapsed)return true;
+    }catch(e){}
+    return false;
+  }
+  function conferir(tl,agora){if((dedo||ocupado())&&!agora)return false;if(vencida(tl))return refazer(tl);return false}
+  function conferirTodas(agora){
+    try{var ts=document.querySelectorAll('.textLayer');
+      for(var i=0;i<ts.length;i++)conferir(ts[i],agora);
+    }catch(e){}
+  }
+
+  /* quebra o texto que o PDF informa em palavras, com a posicao de cada uma */
+  function palavrasDosItens(tl){
+    var its=tl._itensPos;if(!its||!its.length)return null;
+    var out=[];
+    for(var i=0;i<its.length;i++){
+      var it=its[i],s=it.s;if(!s)continue;
+      var total=s.length||1,re=/\S+/g,m;
+      while((m=re.exec(s))){
+        out.push({t:m[0],
+          x:it.x+(m.index/total)*it.w,
+          f:it.x+((m.index+m[0].length)/total)*it.w,
+          y:it.y});
+      }
+    }
+    return out.length?out:null;
+  }
+  /* para cada palavra desenhada, acha o texto de verdade pela posicao dela */
+  function textoPorPosicao(ordem,tl,k){
+    var alvo=palavrasDosItens(tl);if(!alvo||!(k>0))return null;
+    var res=new Array(ordem.length),achou=0;
+    for(var i=0;i<ordem.length;i++){
+      var g=ordem[i];
+      var vx=g.ini/k, vf=g.fim/k, vy=g.y/k, alt=g.alt/k;
+      var cg=(vx+vf)/2;
+      var melhor=null,mo=0,exato=null;
+      for(var j=0;j<alvo.length;j++){
+        var a=alvo[j];
+        if(Math.abs(a.y-vy)>Math.max(2,alt*0.7))continue;
+        /* o centro da palavra desenhada caiu dentro deste pedaco: e esse mesmo */
+        if(!exato&&cg>=a.x&&cg<=a.f)exato=a;
+        var ov=Math.min(vf,a.f)-Math.max(vx,a.x);
+        if(ov<=0)continue;
+        /* mede a sobreposicao em relacao a menor das duas, para palavra curta
+           nao perder para a vizinha larga */
+        var men=Math.max(1,Math.min(vf-vx,a.f-a.x));
+        var nota=ov/men;
+        if(nota>mo){mo=nota;melhor=a}
+      }
+      var esc2=exato||melhor;
+      if(esc2&&(exato||mo>0.35)){res[i]=esc2.t;achou++}
+    }
+    return achou>=ordem.length*0.55?res:null;
   }
 
   function refazer(tl){
@@ -113,14 +264,23 @@
       // o texto desenhado nem sempre e o texto de verdade (fonte embutida com
       // letras remapeadas). Nesse caso usamos o texto que o proprio PDF informa,
       // casando na mesma ordem em que as letras foram desenhadas.
+      var larg0=cv.offsetWidth||tl.offsetWidth||0;
+      var kbm=(tl._vpW>0)?(cv.width/tl._vpW):0;      // pixels do desenho por ponto do PDF
       var certas=tl._palavras||null;
-      if(certas&&certas.length===ordem.length){
+      if(certas&&certas.length===ordem.length&&!window.__astraForcaPos){
         for(var n=0;n<ordem.length;n++)ordem[n].t=certas[n];
-      }else if(ordem.ilegivel)return false
+        tl.dataset.astraMotivo='contagem';
+      }else{
+        var porPos=textoPorPosicao(ordem,tl,kbm);
+        if(porPos){
+          for(var n2=0;n2<ordem.length;n2++)if(porPos[n2])ordem[n2].t=porPos[n2];
+          tl.dataset.astraMotivo='posicao';
+        }else if(ordem.ilegivel){tl.dataset.astraMotivo='ilegivel';return false}
+        else tl.dataset.astraMotivo='desenho';
+      }
       var lg=emLinhas(ordem);if(!lg.length)return false
       // as letras estao em pixels do desenho; a camada esta em pixels da tela
-      var larg=cv.offsetWidth||tl.offsetWidth||0;
-      var fator=cv.width?(larg/cv.width):0;
+      var fator=cv.width?((larg0||cv.offsetWidth||tl.offsetWidth||0)/cv.width):0;
       if(!(fator>0))return false
       montar(tl,lg,fator);
       return true;
@@ -171,6 +331,18 @@
           var bruto='';
           for(var q=0;q<itens.length;q++)if(itens[q].str!==undefined)bruto+=itens[q].str+(itens[q].hasEOL?'\n':'');
           tl._palavras=bruto.split(/\s+/).filter(function(w){return w.length});
+          /* e tambem ONDE cada pedaco de texto esta, para casar por posicao quando a
+             contagem de palavras nao bater (acontece em livro com hifen e aspas) */
+          tl._vpW=vp&&vp.width||0;
+          var pos=[];
+          if(U&&vpt){
+            for(var z=0;z<itens.length;z++){
+              var it=itens[z];if(it.str===undefined||!it.str)continue;
+              var m=U.transform(vpt,it.transform);
+              pos.push({s:it.str,x:m[4],y:m[5],w:(it.width||0)*(esc||1)});
+            }
+          }
+          tl._itensPos=pos;
         }
       }catch(e){}
       var faz=function(){if(!refazer(tl))encaixar(tl,divs,itens,esc,vpt)};
@@ -225,34 +397,41 @@
       if(chave==='getDocument')return meuAbrir;
       return Reflect.get(alvo,chave,alvo);
     }});
-    window.__astraRemendo=(window.pdfjsLib.renderTextLayer===meuTexto)?'4.2':'falhou';
-    setInterval(function(){
+    window.__astraRemendo=(window.pdfjsLib.renderTextLayer===meuTexto)?'4.4':'falhou';
+    setInterval(conferirTodas,400);
+
+    /* no instante do toque: se a camada embaixo do dedo estiver vencida, refaz
+       agora, antes de a pessoa terminar de segurar a palavra. e o que garante que
+       o dicionario nunca abre com a palavra de tras. */
+    var solta=null;
+    function noToque(e){
       try{
-        var ts=document.querySelectorAll('.textLayer');
-        for(var i=0;i<ts.length;i++){
-          var t=ts[i];
-          if(t.dataset.astra==='letras')continue;
-          var pai=t.parentElement,cv=pai&&pai.querySelector('canvas');
-          if(!cv)continue;
-          var l=MAPA.get(cv);
-          if(l&&l.length)refazer(t);
-        }
-      }catch(e){}
-    },400);
+        var x=e.clientX,y=e.clientY;
+        if(x===undefined&&e.touches&&e.touches[0]){x=e.touches[0].clientX;y=e.touches[0].clientY}
+        var tl=(x===undefined)?null:camadaEm(x,y);
+        if(tl)conferir(tl,true);else conferirTodas(true);
+      }catch(_){}
+      clearTimeout(solta);dedo=true;
+    }
+    /* segura mais um pouco depois de soltar: o app ainda esta resolvendo a palavra */
+    function soltou(){clearTimeout(solta);solta=setTimeout(function(){dedo=false},900)}
+    window.__astraAlvo=alvoEm;
+    document.addEventListener('pointerdown',noToque,true);
+    document.addEventListener('touchstart',noToque,{capture:true,passive:true});
+    document.addEventListener('pointerup',soltou,true);
+    document.addEventListener('pointercancel',soltou,true);
+    document.addEventListener('touchend',soltou,{capture:true,passive:true});
+    document.addEventListener('touchcancel',soltou,{capture:true,passive:true});
+    /* e tambem quando o proprio canvas muda de tamanho */
+    try{
+      if(typeof ResizeObserver==='function'){
+        var RO=new ResizeObserver(function(){conferirTodas()});
+        setInterval(function(){try{
+          var cs=document.querySelectorAll('.pg canvas,.page canvas');
+          for(var i=0;i<cs.length;i++)if(!cs[i].__astraRO){cs[i].__astraRO=1;RO.observe(cs[i])}
+        }catch(_){}},1200);
+      }
+    }catch(_){}
 
   }catch(e){window.__astraRemendo='falhou'}
-})();
-
-/* TESTE: libera o Astra Pro. Tirar depois de gerar o APK. */
-(function(){
-  try{
-    if(Date.now()>new Date('2026-10-15T00:00:00Z').getTime())return;
-    var valor=JSON.stringify({on:true,plan:'manual',until:0,at:Date.now()});
-    var ehPro=function(k){return typeof k==='string'&&k.indexOf('astra.pro.')===0};
-    var ler=Storage.prototype.getItem, gravar=Storage.prototype.setItem;
-    Storage.prototype.getItem=function(k){return ehPro(k)?valor:ler.apply(this,arguments)};
-    Storage.prototype.setItem=function(k,v){if(ehPro(k))return;return gravar.apply(this,arguments)};
-    var marca=function(){try{document.documentElement.dataset.proon='1'}catch(e){}};
-    marca(); setInterval(marca,1500);
-  }catch(e){}
 })();
