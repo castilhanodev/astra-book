@@ -14,8 +14,16 @@ jobs:
 
       - name: Abrir o projeto
         run: |
+          # guarda o que esta commitado: patch/ e remendo.js sao a camada final
+          # e nao podem ser sobrescritos pelos zips antigos
+          mkdir -p "$RUNNER_TEMP/commitado"
+          if [ -d patch ]; then cp -r patch "$RUNNER_TEMP/commitado/patch"; fi
+          if [ -f remendo.js ]; then cp remendo.js "$RUNNER_TEMP/commitado/remendo.js"; fi
           if [ -f projeto.zip ]; then unzip -oq projeto.zip; fi
           for z in $(ls atualizacao*.zip 2>/dev/null | sort); do unzip -oq "$z"; done
+          # o commitado vence
+          if [ -d "$RUNNER_TEMP/commitado/patch" ]; then cp -r "$RUNNER_TEMP/commitado/patch/." patch/; fi
+          if [ -f "$RUNNER_TEMP/commitado/remendo.js" ]; then cp "$RUNNER_TEMP/commitado/remendo.js" remendo.js; fi
           if [ -d patch ]; then cp -r patch/. .; fi
           test -f remendo.js && cp remendo.js www/patch.js || true
 
